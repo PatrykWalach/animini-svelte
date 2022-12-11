@@ -1,6 +1,10 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+	import { createCache } from '$lib/client'
+	// import { extractData } from '$lib/client';
+	import Header from './Header.svelte'
+	import './styles.css'
+
+	createCache()
 </script>
 
 <div class="app">
@@ -15,6 +19,7 @@
 	</footer>
 </div>
 
+<!-- {@html `<script>${extractData()}</script>`} -->
 <style>
 	.app {
 		display: flex;

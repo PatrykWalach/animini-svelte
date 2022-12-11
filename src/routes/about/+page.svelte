@@ -1,26 +1,50 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script lang="ts">
+	import { enhance } from '$app/forms'
+	import type { ActionData, PageData } from './$types'
 
-<div class="text-column">
-	<h1>About this app</h1>
+	export let form: ActionData
+	export let data: PageData
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+	const cache = getCache()
 
-	<pre>npm create svelte@latest</pre>
+	$: query = cache.getQuery({ ...data, query: AboutQuery })
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+	import { AboutQuery } from './gql'
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+	$: color = $query.data?.Viewer?.options?.profileColor
+
+	import { PUBLIC_ANILIST_GQL_SERVER_URL } from '$env/static/public'
+	import { getCache } from '$lib/client'
+	import Dialog from '$lib/Dialog.svelte'
+	import { offline } from '$lib/form'
+
+	const onSubmit = offline<ActionData, undefined>((args) => {
+		$query.update(
+			(data) =>
+				data?.Viewer?.options && {
+					...data,
+					Viewer: {
+						...data.Viewer,
+						options: {
+							...data.Viewer.options,
+							profileColor: String(args.data.get('profileColor'))
+						}
+					}
+				}
+		)
+
+		return undefined
+	})
+</script>
+
+<h1>{PUBLIC_ANILIST_GQL_SERVER_URL}</h1>
+<h2>{color}</h2>
+
+<form method="POST" use:enhance={onSubmit}>
+	<label for="profileColor">Profile color</label>
+	<input type="text" id="profileColor" name="profileColor" />
+
+	<button type="submit">Submit</button>
+</form>
+
+<Dialog />
