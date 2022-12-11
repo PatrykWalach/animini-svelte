@@ -37,7 +37,7 @@ export class InMemoryStore {
 		watch: Pick<Cache.WatchOptions<TData, TVariables>, 'query' | 'variables'>
 	): Readable<TData | undefined> {
 		return {
-			subscribe: (run, invalidator) => {
+			subscribe: (run, _invalidator) => {
 				return this.cache.watch({
 					returnPartialData: true,
 					optimistic: true,

@@ -26,10 +26,10 @@
 		classnames = {};
 
 		data.answers.forEach((answer, i) => {
-			const guess = data.guesses[i];
+			const guess = data.guesses[i]!;
 
 			for (let i = 0; i < 5; i += 1) {
-				const letter = guess[i];
+				const letter = guess[i]!;
 
 				if (answer[i] === 'x') {
 					classnames[letter] = 'exact';
@@ -45,7 +45,7 @@
 	 * if client-side JavaScript is enabled
 	 */
 	function update(event: MouseEvent) {
-		const guess = data.guesses[i];
+		const guess = data.guesses[i]!;
 		const key = (event.target as HTMLButtonElement).getAttribute('data-key');
 
 		if (key === 'backspace') {
@@ -102,7 +102,7 @@
 						readonly
 						class:exact={answer === 'x'}
 						class:close={answer === 'c'}
-						aria-selected={current && column === data.guesses[row].length}
+						aria-selected={current && column === data.guesses[row]?.length}
 						value={data.guesses[row]?.[column] ?? ''}
 					/>
 				{/each}
@@ -139,7 +139,7 @@
 								on:click|preventDefault={update}
 								data-key={letter}
 								class={classnames[letter]}
-								disabled={data.guesses[i].length === 5}
+								disabled={data.guesses[i]?.length === 5}
 								formaction="?/update"
 								name="key"
 								value={letter}
