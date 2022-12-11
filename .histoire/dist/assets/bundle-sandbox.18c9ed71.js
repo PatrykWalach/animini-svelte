@@ -8,14 +8,14 @@ import {
 	g as onMounted,
 	av as h,
 	aw as applyState
-} from './vendor.ebc1f38e.js'
+} from './vendor.ebc1f38e.js';
 import {
 	m as mapFile,
 	f as files,
 	b as _sfc_main,
 	h as histoireConfig,
 	i as isDark
-} from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js'
+} from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js';
 import {
 	S as STATE_SYNC,
 	P as PREVIEW_SETTINGS_SYNC,
@@ -23,56 +23,58 @@ import {
 	b as SANDBOX_READY,
 	_ as _sfc_main$1,
 	t as toRawDeep
-} from './state.b40f823e.js'
-const sandbox = ''
-const query = parseQuery(window.location.search)
-const file = ref(mapFile(files.find((f) => f.id === query.storyId)))
+} from './state.b40f823e.js';
+const sandbox = '';
+const query = parseQuery(window.location.search);
+const file = ref(mapFile(files.find((f) => f.id === query.storyId)));
 const app = createApp({
 	name: 'SandboxApp',
 	setup() {
-		const story = computed(() => file.value.story)
+		const story = computed(() => file.value.story);
 		const variant = computed(() => {
-			var _a
-			return (_a = story.value) == null ? void 0 : _a.variants.find((v) => v.id === query.variantId)
-		})
-		let synced = false
-		let mounted = false
+			var _a;
+			return (_a = story.value) == null
+				? void 0
+				: _a.variants.find((v) => v.id === query.variantId);
+		});
+		let synced = false;
+		let mounted = false;
 		window.addEventListener('message', (event) => {
-			var _a, _b
+			var _a, _b;
 			if (((_a = event.data) == null ? void 0 : _a.type) === STATE_SYNC) {
-				if (!mounted) return
-				synced = true
-				applyState(variant.value.state, event.data.state)
+				if (!mounted) return;
+				synced = true;
+				applyState(variant.value.state, event.data.state);
 			} else if (((_b = event.data) == null ? void 0 : _b.type) === PREVIEW_SETTINGS_SYNC) {
-				applyPreviewSettings(event.data.settings)
+				applyPreviewSettings(event.data.settings);
 			}
-		})
+		});
 		watch(
 			() => variant.value.state,
 			(value) => {
-				var _a
+				var _a;
 				if (synced && mounted) {
-					synced = false
-					return
+					synced = false;
+					return;
 				}
-				;(_a = window.parent) == null
+				(_a = window.parent) == null
 					? void 0
 					: _a.postMessage({
 							type: STATE_SYNC,
 							state: toRawDeep(value, true)
-					  })
+					  });
 			},
 			{
 				deep: true
 			}
-		)
+		);
 		onMounted(() => {
-			mounted = true
-		})
+			mounted = true;
+		});
 		return {
 			story,
 			variant
-		}
+		};
 	},
 	render() {
 		return [
@@ -87,30 +89,30 @@ const app = createApp({
 						story: this.story,
 						variant: this.variant,
 						onReady: () => {
-							var _a
-							;(_a = window.parent) == null
+							var _a;
+							(_a = window.parent) == null
 								? void 0
 								: _a.postMessage({
 										type: SANDBOX_READY
-								  })
+								  });
 						}
 				  })
 				: null
-		]
+		];
 	}
-})
-app.use(createPinia())
-app.mount('#app')
+});
+app.use(createPinia());
+app.mount('#app');
 watch(
 	isDark,
 	(value) => {
 		if (value) {
-			document.documentElement.classList.add(histoireConfig.sandboxDarkClass)
+			document.documentElement.classList.add(histoireConfig.sandboxDarkClass);
 		} else {
-			document.documentElement.classList.remove(histoireConfig.sandboxDarkClass)
+			document.documentElement.classList.remove(histoireConfig.sandboxDarkClass);
 		}
 	},
 	{
 		immediate: true
 	}
-)
+);

@@ -65,7 +65,7 @@ import {
 	T as Transition,
 	av as h,
 	aT as onBeforeUnmount
-} from './vendor.ebc1f38e.js'
+} from './vendor.ebc1f38e.js';
 import {
 	u as useScrollOnActive,
 	B as BaseListItemLink,
@@ -75,8 +75,8 @@ import {
 	i as isMobile,
 	c as BaseSplitPane,
 	d as _sfc_main$y
-} from './bundle-main.0f374b94.js'
-import { B as BaseEmpty } from './BaseEmpty.041cdabb.js'
+} from './bundle-main.0f374b94.js';
+import { B as BaseEmpty } from './BaseEmpty.041cdabb.js';
 import {
 	g as getContrastColor,
 	_ as _sfc_main$x,
@@ -85,28 +85,28 @@ import {
 	S as STATE_SYNC,
 	t as toRawDeep,
 	P as PREVIEW_SETTINGS_SYNC
-} from './state.b40f823e.js'
+} from './state.b40f823e.js';
 import {
 	h as histoireConfig,
 	i as isDark,
 	d as clientSupportPlugins
-} from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js'
+} from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js';
 function useCurrentVariantRoute(variant) {
-	const route = useRoute()
-	const isActive = computed(() => route.query.variantId === variant.value.id)
+	const route = useRoute();
+	const isActive = computed(() => route.query.variantId === variant.value.id);
 	const targetRoute = computed(() => ({
 		...route,
 		query: {
 			...route.query,
 			variantId: variant.value.id
 		}
-	}))
+	}));
 	return {
 		isActive,
 		targetRoute
-	}
+	};
 }
-const _hoisted_1$s = { class: 'htw-truncate' }
+const _hoisted_1$s = { class: 'htw-truncate' };
 const _sfc_main$w = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantListItem',
 	props: {
@@ -116,14 +116,14 @@ const _sfc_main$w = /* @__PURE__ */ defineComponent({
 		}
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		useCssVars((_ctx) => ({
 			'89126aaa': unref(variant).iconColor
-		}))
-		const { variant } = toRefs(props)
-		const { isActive, targetRoute } = useCurrentVariantRoute(variant)
-		const el = ref()
-		useScrollOnActive(isActive, el)
+		}));
+		const { variant } = toRefs(props);
+		const { isActive, targetRoute } = useCurrentVariantRoute(variant);
+		const el = ref();
+		useScrollOnActive(isActive, el);
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -146,7 +146,7 @@ const _sfc_main$w = /* @__PURE__ */ defineComponent({
 							},
 							{
 								default: withCtx(({ active }) => {
-									var _a
+									var _a;
 									return [
 										createVNode(
 											unref(Icon),
@@ -165,7 +165,7 @@ const _sfc_main$w = /* @__PURE__ */ defineComponent({
 											['icon', 'class']
 										),
 										createBaseVNode('span', _hoisted_1$s, toDisplayString(unref(variant).title), 1)
-									]
+									];
 								}),
 								_: 1
 							},
@@ -175,13 +175,13 @@ const _sfc_main$w = /* @__PURE__ */ defineComponent({
 					],
 					512
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const StoryVariantListItem = /* @__PURE__ */ _export_sfc(_sfc_main$w, [
 	['__scopeId', 'data-v-ab890d9c']
-])
+]);
 const usePreviewSettingsStore = defineStore('preview-settings', () => {
 	const currentSettings = useStorage('_histoire-sandbox-settings-v3', {
 		responsiveWidth: 720,
@@ -190,18 +190,18 @@ const usePreviewSettingsStore = defineStore('preview-settings', () => {
 		backgroundColor: 'transparent',
 		checkerboard: false,
 		textDirection: 'ltr'
-	})
+	});
 	return {
 		currentSettings
-	}
-})
+	};
+});
 function getSandboxUrl(story, variant) {
-	const url = new URLSearchParams()
-	url.append('storyId', story.id)
-	url.append('variantId', variant.id)
-	return `${base}__sandbox.html?${url.toString()}`
+	const url = new URLSearchParams();
+	url.append('storyId', story.id);
+	url.append('variantId', variant.id);
+	return `${base}__sandbox.html?${url.toString()}`;
 }
-const _hoisted_1$r = ['href']
+const _hoisted_1$r = ['href'];
 const _sfc_main$v = /* @__PURE__ */ defineComponent({
 	__name: 'ToolbarNewTab',
 	props: {
@@ -209,12 +209,12 @@ const _sfc_main$v = /* @__PURE__ */ defineComponent({
 		story: null
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		const sandboxUrl = computed(() => {
-			return getSandboxUrl(props.story, props.variant)
-		})
+			return getSandboxUrl(props.story, props.variant);
+		});
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return withDirectives(
 				(openBlock(),
 				createElementBlock(
@@ -235,12 +235,12 @@ const _sfc_main$v = /* @__PURE__ */ defineComponent({
 					_hoisted_1$r
 				)),
 				[[_directive_tooltip, 'Open variant in new tab']]
-			)
-		}
+			);
+		};
 	}
-})
-const _sfc_main$u = {}
-const _hoisted_1$q = { fill: 'none' }
+});
+const _sfc_main$u = {};
+const _hoisted_1$q = { fill: 'none' };
 const _hoisted_2$j = /* @__PURE__ */ createBaseVNode(
 	'pattern',
 	{
@@ -266,7 +266,7 @@ const _hoisted_2$j = /* @__PURE__ */ createBaseVNode(
 		})
 	],
 	-1
-)
+);
 const _hoisted_3$e = /* @__PURE__ */ createBaseVNode(
 	'rect',
 	{
@@ -278,18 +278,18 @@ const _hoisted_3$e = /* @__PURE__ */ createBaseVNode(
 	},
 	null,
 	-1
-)
-const _hoisted_4$a = [_hoisted_2$j, _hoisted_3$e]
+);
+const _hoisted_4$a = [_hoisted_2$j, _hoisted_3$e];
 function _sfc_render$4(_ctx, _cache) {
-	return openBlock(), createElementBlock('svg', _hoisted_1$q, _hoisted_4$a)
+	return openBlock(), createElementBlock('svg', _hoisted_1$q, _hoisted_4$a);
 }
-const CheckerboardPattern = /* @__PURE__ */ _export_sfc(_sfc_main$u, [['render', _sfc_render$4]])
-const _withScopeId$2 = (n) => (pushScopeId('data-v-f7c98176'), (n = n()), popScopeId(), n)
-const _hoisted_1$p = { class: 'htw-flex-none htw-flex htw-items-center' }
-const _hoisted_2$i = { class: 'htw-truncate htw-flex-1' }
+const CheckerboardPattern = /* @__PURE__ */ _export_sfc(_sfc_main$u, [['render', _sfc_render$4]]);
+const _withScopeId$2 = (n) => (pushScopeId('data-v-f7c98176'), (n = n()), popScopeId(), n);
+const _hoisted_1$p = { class: 'htw-flex-none htw-flex htw-items-center' };
+const _hoisted_2$i = { class: 'htw-truncate htw-flex-1' };
 const _hoisted_3$d = {
 	class: 'htw-flex-none htw-ml-auto htw-hidden group-hover:htw-flex htw-items-center'
-}
+};
 const _hoisted_4$9 = /* @__PURE__ */ _withScopeId$2(() =>
 	/* @__PURE__ */ createBaseVNode(
 		'div',
@@ -300,7 +300,7 @@ const _hoisted_4$9 = /* @__PURE__ */ _withScopeId$2(() =>
 		null,
 		-1
 	)
-)
+);
 const _sfc_main$t = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantGridItem',
 	props: {
@@ -317,41 +317,41 @@ const _sfc_main$t = /* @__PURE__ */ defineComponent({
 		resize: (width, height) => true
 	},
 	setup(__props, { emit }) {
-		const props = __props
+		const props = __props;
 		useCssVars((_ctx) => ({
 			edeb0368: unref(variant).iconColor,
 			f4b27ac2: unref(settings).backgroundColor
-		}))
-		const { variant } = toRefs(props)
-		const { isActive, targetRoute } = useCurrentVariantRoute(variant)
+		}));
+		const { variant } = toRefs(props);
+		const { isActive, targetRoute } = useCurrentVariantRoute(variant);
 		Object.assign(props.variant, {
 			previewReady: false
-		})
+		});
 		function onReady() {
 			Object.assign(props.variant, {
 				previewReady: true
-			})
+			});
 		}
-		const router = useRouter()
+		const router = useRouter();
 		function selectVariant() {
-			router.push(targetRoute.value)
+			router.push(targetRoute.value);
 		}
-		const el = ref()
-		const { autoScroll } = useScrollOnActive(isActive, el)
+		const el = ref();
+		const { autoScroll } = useScrollOnActive(isActive, el);
 		useResizeObserver(el, () => {
 			if (props.variant.previewReady) {
-				emit('resize', el.value.clientWidth, el.value.clientHeight)
+				emit('resize', el.value.clientWidth, el.value.clientHeight);
 				if (isActive.value) {
-					autoScroll()
+					autoScroll();
 				}
 			}
-		})
-		const settings = usePreviewSettingsStore().currentSettings
-		const contrastColor = computed(() => getContrastColor(settings))
-		const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor)
+		});
+		const settings = usePreviewSettingsStore().currentSettings;
+		const contrastColor = computed(() => getContrastColor(settings));
+		const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor);
 		return (_ctx, _cache) => {
-			const _component_RouterLink = resolveComponent('RouterLink')
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _component_RouterLink = resolveComponent('RouterLink');
+			const _directive_tooltip = resolveDirective('tooltip');
 			return (
 				openBlock(),
 				createElementBlock(
@@ -382,7 +382,7 @@ const _sfc_main$t = /* @__PURE__ */ defineComponent({
 									},
 									{
 										default: withCtx(() => {
-											var _a
+											var _a;
 											return [
 												createVNode(
 													unref(Icon),
@@ -406,7 +406,7 @@ const _sfc_main$t = /* @__PURE__ */ defineComponent({
 													toDisplayString(unref(variant).title),
 													1
 												)
-											]
+											];
 										}),
 										_: 1
 									},
@@ -485,21 +485,21 @@ const _sfc_main$t = /* @__PURE__ */ defineComponent({
 					],
 					512
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const StoryVariantGridItem = /* @__PURE__ */ _export_sfc(_sfc_main$t, [
 	['__scopeId', 'data-v-f7c98176']
-])
-const _hoisted_1$o = { class: 'htw-text-white htw-w-[16px] htw-h-[16px] htw-relative' }
+]);
+const _hoisted_1$o = { class: 'htw-text-white htw-w-[16px] htw-h-[16px] htw-relative' };
 const _hoisted_2$h = {
 	width: '16',
 	height: '16',
 	viewBox: '0 0 24 24',
 	class: 'htw-relative htw-z-10'
-}
-const _hoisted_3$c = ['stroke-dasharray', 'stroke-dashoffset']
+};
+const _hoisted_3$c = ['stroke-dasharray', 'stroke-dashoffset'];
 const _sfc_main$s = /* @__PURE__ */ defineComponent({
 	__name: 'BaseCheckbox',
 	props: {
@@ -512,23 +512,23 @@ const _sfc_main$s = /* @__PURE__ */ defineComponent({
 		'update:modelValue': (newValue) => true
 	},
 	setup(__props, { emit }) {
-		const props = __props
+		const props = __props;
 		function toggle() {
-			emit('update:modelValue', !props.modelValue)
-			animationEnabled.value = true
+			emit('update:modelValue', !props.modelValue);
+			animationEnabled.value = true;
 		}
-		const path = ref()
-		const dasharray = ref(0)
-		const progress = computed(() => (props.modelValue ? 1 : 0))
-		const dashoffset = computed(() => (1 - progress.value) * dasharray.value)
-		const animationEnabled = ref(false)
+		const path = ref();
+		const dasharray = ref(0);
+		const progress = computed(() => (props.modelValue ? 1 : 0));
+		const dashoffset = computed(() => (1 - progress.value) * dasharray.value);
+		const animationEnabled = ref(false);
 		watch(path, () => {
-			var _a, _b, _c
+			var _a, _b, _c;
 			dasharray.value =
 				(_c = (_b = (_a = path.value).getTotalLength) == null ? void 0 : _b.call(_a)) != null
 					? _c
-					: 21.21
-		})
+					: 21.21;
+		});
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -601,39 +601,39 @@ const _sfc_main$s = /* @__PURE__ */ defineComponent({
 					],
 					32
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$n = {
 	class:
 		'htw-cursor-pointer hover:htw-text-primary-500 htw-flex htw-items-center htw-gap-1 htw-h-full htw-px-2 htw-group'
-}
+};
 const _hoisted_2$g = {
 	class:
 		'bind-preview-bg htw-w-4 htw-h-4 htw-rounded-full htw-border htw-border-black/50 dark:htw-border-white/50 htw-flex htw-items-center htw-justify-center htw-text-xs'
-}
-const _hoisted_3$b = { key: 0 }
+};
+const _hoisted_3$b = { key: 0 };
 const _hoisted_4$8 = {
 	class: 'htw-flex htw-flex-col htw-items-stretch',
 	'data-test-id': 'background-popper'
-}
-const _hoisted_5$5 = ['onClick']
-const _hoisted_6$4 = { class: 'htw-mr-auto' }
-const _hoisted_7$3 = { class: 'htw-ml-auto htw-opacity-70' }
-const _hoisted_8$2 = { key: 0 }
+};
+const _hoisted_5$5 = ['onClick'];
+const _hoisted_6$4 = { class: 'htw-mr-auto' };
+const _hoisted_7$3 = { class: 'htw-ml-auto htw-opacity-70' };
+const _hoisted_8$2 = { key: 0 };
 const _sfc_main$r = /* @__PURE__ */ defineComponent({
 	__name: 'ToolbarBackground',
 	setup(__props) {
 		useCssVars((_ctx) => ({
 			'627bec82': unref(settings).backgroundColor,
 			35068428: unref(contrastColor)
-		}))
-		const settings = usePreviewSettingsStore().currentSettings
-		const contrastColor = computed(() => getContrastColor(settings))
+		}));
+		const settings = usePreviewSettingsStore().currentSettings;
+		const contrastColor = computed(() => getContrastColor(settings));
 		return (_ctx, _cache) => {
-			const _component_VDropdown = resolveComponent('VDropdown')
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _component_VDropdown = resolveComponent('VDropdown');
+			const _directive_tooltip = resolveDirective('tooltip');
 			return unref(histoireConfig).backgroundPresets.length
 				? (openBlock(),
 				  createBlock(
@@ -683,8 +683,8 @@ const _sfc_main$r = /* @__PURE__ */ defineComponent({
 															]
 														]),
 														onClick: ($event) => {
-															unref(settings).backgroundColor = option.color
-															hide()
+															unref(settings).backgroundColor = option.color;
+															hide();
 														}
 													},
 													[
@@ -727,7 +727,7 @@ const _sfc_main$r = /* @__PURE__ */ defineComponent({
 													10,
 													_hoisted_5$5
 												)
-											)
+											);
 										}),
 										128
 									))
@@ -753,19 +753,19 @@ const _sfc_main$r = /* @__PURE__ */ defineComponent({
 							_: 1
 						}
 				  ))
-				: createCommentVNode('', true)
-		}
+				: createCommentVNode('', true);
+		};
 	}
-})
+});
 const ToolbarBackground = /* @__PURE__ */ _export_sfc(_sfc_main$r, [
 	['__scopeId', 'data-v-c48fb2b2']
-])
+]);
 const _sfc_main$q = /* @__PURE__ */ defineComponent({
 	__name: 'ToolbarTextDirection',
 	setup(__props) {
-		const settings = usePreviewSettingsStore().currentSettings
+		const settings = usePreviewSettingsStore().currentSettings;
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return withDirectives(
 				(openBlock(),
 				createElementBlock(
@@ -803,105 +803,105 @@ const _sfc_main$q = /* @__PURE__ */ defineComponent({
 						}`
 					]
 				]
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$m = {
 	class:
 		'histoire-story-variant-grid htw-flex htw-flex-col htw-items-stretch htw-h-full __histoire-pane-shadow-from-right'
-}
+};
 const _hoisted_2$f = {
 	key: 0,
 	class: 'htw-flex-none htw-flex htw-items-center htw-justify-end htw-h-8 htw-mx-2 htw-mt-1'
-}
-const _hoisted_3$a = { class: 'htw-overflow-y-auto htw-flex htw-flex-1' }
+};
+const _hoisted_3$a = { class: 'htw-overflow-y-auto htw-flex htw-flex-1' };
 const _sfc_main$p = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantGrid',
 	setup(__props) {
-		const storyStore = useStoryStore()
+		const storyStore = useStoryStore();
 		const gridTemplateWidth = computed(() => {
 			if (storyStore.currentStory.layout.type !== 'grid') {
-				return
+				return;
 			}
-			const layoutWidth = storyStore.currentStory.layout.width
+			const layoutWidth = storyStore.currentStory.layout.width;
 			if (!layoutWidth) {
-				return '200px'
+				return '200px';
 			}
 			if (typeof layoutWidth === 'number') {
-				return layoutWidth + 'px'
+				return layoutWidth + 'px';
 			}
-			return layoutWidth
-		})
-		const margin = 16
-		const gap = 16
-		const itemWidth = ref(16)
-		const maxItemHeight = ref(0)
-		const maxCount = ref(10)
-		const countPerRow = ref(0)
-		const visibleRows = ref(0)
-		const el = ref(null)
+			return layoutWidth;
+		});
+		const margin = 16;
+		const gap = 16;
+		const itemWidth = ref(16);
+		const maxItemHeight = ref(0);
+		const maxCount = ref(10);
+		const countPerRow = ref(0);
+		const visibleRows = ref(0);
+		const el = ref(null);
 		useResizeObserver(el, () => {
-			updateMaxCount()
-			updateSize()
-		})
+			updateMaxCount();
+			updateSize();
+		});
 		function updateMaxCount() {
-			if (!maxItemHeight.value) return
-			const width = el.value.clientWidth - margin * 2
-			const height = el.value.clientHeight
-			const scrollTop = el.value.scrollTop
-			countPerRow.value = Math.floor((width + gap) / (itemWidth.value + gap))
-			visibleRows.value = Math.ceil((height + scrollTop + gap) / (maxItemHeight.value + gap))
-			const newMaxCount = countPerRow.value * visibleRows.value
+			if (!maxItemHeight.value) return;
+			const width = el.value.clientWidth - margin * 2;
+			const height = el.value.clientHeight;
+			const scrollTop = el.value.scrollTop;
+			countPerRow.value = Math.floor((width + gap) / (itemWidth.value + gap));
+			visibleRows.value = Math.ceil((height + scrollTop + gap) / (maxItemHeight.value + gap));
+			const newMaxCount = countPerRow.value * visibleRows.value;
 			if (maxCount.value < newMaxCount) {
-				maxCount.value = newMaxCount
+				maxCount.value = newMaxCount;
 			}
 			if (storyStore.currentVariant) {
-				const index = storyStore.currentStory.variants.indexOf(storyStore.currentVariant)
+				const index = storyStore.currentStory.variants.indexOf(storyStore.currentVariant);
 				if (index + 1 > maxCount.value) {
-					maxCount.value = index + 1
+					maxCount.value = index + 1;
 				}
 			}
 		}
 		function onItemResize(w, h2) {
-			itemWidth.value = w
+			itemWidth.value = w;
 			if (maxItemHeight.value < h2) {
-				maxItemHeight.value = h2
-				updateMaxCount()
+				maxItemHeight.value = h2;
+				updateMaxCount();
 			}
 		}
 		watch(
 			() => storyStore.currentVariant,
 			() => {
-				maxItemHeight.value = 0
-				updateMaxCount()
+				maxItemHeight.value = 0;
+				updateMaxCount();
 			}
-		)
-		const gridEl = ref(null)
-		const gridColumnWidth = ref(1)
-		const viewWidth = ref(1)
+		);
+		const gridEl = ref(null);
+		const gridColumnWidth = ref(1);
+		const viewWidth = ref(1);
 		function updateSize() {
-			if (!el.value) return
-			viewWidth.value = el.value.clientWidth
-			if (!gridEl.value) return
+			if (!el.value) return;
+			viewWidth.value = el.value.clientWidth;
+			if (!gridEl.value) return;
 			if (gridTemplateWidth.value.endsWith('%')) {
-				gridColumnWidth.value = (viewWidth.value * parseInt(gridTemplateWidth.value)) / 100 - gap
+				gridColumnWidth.value = (viewWidth.value * parseInt(gridTemplateWidth.value)) / 100 - gap;
 			} else {
-				gridColumnWidth.value = parseInt(gridTemplateWidth.value)
+				gridColumnWidth.value = parseInt(gridTemplateWidth.value);
 			}
 		}
 		onMounted(() => {
-			updateSize()
-		})
+			updateSize();
+		});
 		useResizeObserver(gridEl, () => {
-			updateSize()
-		})
+			updateSize();
+		});
 		const columnCount = computed(() =>
 			Math.min(
 				storyStore.currentStory.variants.length,
 				Math.floor((viewWidth.value + gap) / (gridColumnWidth.value + gap))
 			)
-		)
+		);
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -970,7 +970,7 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
 																	8,
 																	['variant', 'story']
 																)
-															)
+															);
 														}
 													),
 													128
@@ -986,14 +986,14 @@ const _sfc_main$p = /* @__PURE__ */ defineComponent({
 						)
 					])
 				])
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$l = {
 	class:
 		'histoire-toolbar-title htw-flex htw-items-center htw-gap-1 htw-text-gray-500 htw-flex-1 htw-truncate htw-min-w-0'
-}
+};
 const _sfc_main$o = /* @__PURE__ */ defineComponent({
 	__name: 'ToolbarTitle',
 	props: {
@@ -1001,7 +1001,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
 	},
 	setup(__props) {
 		return (_ctx, _cache) => {
-			var _a
+			var _a;
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$l, [
@@ -1020,33 +1020,33 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
 					),
 					createBaseVNode('span', null, toDisplayString(__props.variant.title), 1)
 				])
-			)
-		}
+			);
+		};
 	}
-})
-const _hoisted_1$k = { class: 'htw-flex htw-flex-col htw-items-stretch' }
-const _hoisted_2$e = { class: 'htw-flex htw-items-center htw-gap-2 htw-px-4 htw-py-3' }
+});
+const _hoisted_1$k = { class: 'htw-flex htw-flex-col htw-items-stretch' };
+const _hoisted_2$e = { class: 'htw-flex htw-items-center htw-gap-2 htw-px-4 htw-py-3' };
 const _hoisted_3$9 = /* @__PURE__ */ createBaseVNode(
 	'span',
 	{ class: 'htw-opacity-50' },
 	'\xD7',
 	-1
-)
-const _hoisted_4$7 = ['onClick']
-const _hoisted_5$4 = { class: 'htw-ml-auto htw-opacity-70 htw-flex htw-gap-1' }
-const _hoisted_6$3 = { key: 0 }
-const _hoisted_7$2 = { key: 0 }
-const _hoisted_8$1 = { key: 1 }
-const _hoisted_9$1 = { key: 2 }
-const _hoisted_10 = { key: 0 }
+);
+const _hoisted_4$7 = ['onClick'];
+const _hoisted_5$4 = { class: 'htw-ml-auto htw-opacity-70 htw-flex htw-gap-1' };
+const _hoisted_6$3 = { key: 0 };
+const _hoisted_7$2 = { key: 0 };
+const _hoisted_8$1 = { key: 1 };
+const _hoisted_9$1 = { key: 2 };
+const _hoisted_10 = { key: 0 };
 const _sfc_main$n = /* @__PURE__ */ defineComponent({
 	__name: 'ToolbarResponsiveSize',
 	setup(__props) {
-		const settings = usePreviewSettingsStore().currentSettings
+		const settings = usePreviewSettingsStore().currentSettings;
 		return (_ctx, _cache) => {
-			var _a
-			const _component_VDropdown = resolveComponent('VDropdown')
-			const _directive_tooltip = resolveDirective('tooltip')
+			var _a;
+			const _component_VDropdown = resolveComponent('VDropdown');
+			const _directive_tooltip = resolveDirective('tooltip');
 			return (
 				openBlock(),
 				createBlock(
@@ -1142,9 +1142,9 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
 														]
 													]),
 													onClick: ($event) => {
-														unref(settings).responsiveWidth = preset.width
-														unref(settings).responsiveHeight = preset.height
-														hide()
+														unref(settings).responsiveWidth = preset.width;
+														unref(settings).responsiveHeight = preset.height;
+														hide();
 													}
 												},
 												[
@@ -1176,14 +1176,14 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
 												10,
 												_hoisted_4$7
 											)
-										)
+										);
 									}),
 									128
 								))
 							])
 						]),
 						default: withCtx(() => {
-							var _a2
+							var _a2;
 							return [
 								withDirectives(
 									(openBlock(),
@@ -1214,164 +1214,164 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
 									)),
 									[[_directive_tooltip, 'Responsive sizes']]
 								)
-							]
+							];
 						}),
 						_: 1
 					},
 					8,
 					['disabled']
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const _sfc_main$m = {}
-const _hoisted_1$j = { class: '__histoire-hatched-pattern' }
+});
+const _sfc_main$m = {};
+const _hoisted_1$j = { class: '__histoire-hatched-pattern' };
 function _sfc_render$3(_ctx, _cache) {
-	return openBlock(), createElementBlock('div', _hoisted_1$j)
+	return openBlock(), createElementBlock('div', _hoisted_1$j);
 }
 const HatchedPattern = /* @__PURE__ */ _export_sfc(_sfc_main$m, [
 	['render', _sfc_render$3],
 	['__scopeId', 'data-v-91561117']
-])
-const _withScopeId$1 = (n) => (pushScopeId('data-v-a83b1911'), (n = n()), popScopeId(), n)
+]);
+const _withScopeId$1 = (n) => (pushScopeId('data-v-a83b1911'), (n = n()), popScopeId(), n);
 const _hoisted_1$i = {
 	class:
 		'histoire-story-responsive-preview htw-w-full htw-h-full htw-flex-1 htw-rounded-lg htw-relative htw-overflow-hidden'
-}
+};
 const _hoisted_2$d = {
 	key: 0,
 	class:
 		'htw-absolute htw-inset-0 htw-w-full htw-h-full htw-bg-gray-100 dark:htw-bg-gray-750 htw-rounded-r-lg htw-border-l-2 htw-border-gray-500/10 dark:htw-border-gray-700/30 htw-overflow-hidden'
-}
+};
 const _hoisted_3$8 = {
 	class: 'bind-preview-bg htw-rounded-lg htw-h-full',
 	'data-test-id': 'responsive-preview-bg'
-}
-const _hoisted_4$6 = { class: 'htw-p-8 htw-h-full htw-relative' }
-const _hoisted_5$3 = { class: 'htw-w-full htw-h-full htw-relative' }
+};
+const _hoisted_4$6 = { class: 'htw-p-8 htw-h-full htw-relative' };
+const _hoisted_5$3 = { class: 'htw-w-full htw-h-full htw-relative' };
 const _hoisted_6$2 = /* @__PURE__ */ _withScopeId$1(() =>
 	/* @__PURE__ */ createBaseVNode('div', { class: 'htw-absolute htw-inset-0' }, null, -1)
-)
+);
 const _hoisted_7$1 = /* @__PURE__ */ createStaticVNode(
 	'<div class="htw-absolute htw-top-5 htw-left-8 htw-h-2 htw-w-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-top-5 htw-right-8 htw-h-2 htw-w-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-bottom-5 htw-left-8 htw-h-2 htw-w-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-bottom-5 htw-right-8 htw-h-2 htw-w-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-left-5 htw-top-8 htw-w-2 htw-h-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-left-5 htw-bottom-8 htw-w-2 htw-h-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-right-5 htw-top-8 htw-w-2 htw-h-px htw-bg-gray-400/25" data-v-a83b1911></div><div class="htw-absolute htw-right-5 htw-bottom-8 htw-w-2 htw-h-px htw-bg-gray-400/25" data-v-a83b1911></div>',
 	8
-)
+);
 const _sfc_main$l = /* @__PURE__ */ defineComponent({
 	__name: 'StoryResponsivePreview',
 	props: {
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		useCssVars((_ctx) => ({
 			'03d1950e': unref(settings).backgroundColor
-		}))
-		const settings = usePreviewSettingsStore().currentSettings
-		const resizing = ref(false)
-		const onUnmountedCleanupFns = []
+		}));
+		const settings = usePreviewSettingsStore().currentSettings;
+		const resizing = ref(false);
+		const onUnmountedCleanupFns = [];
 		onUnmounted(() => {
-			onUnmountedCleanupFns.forEach((fn) => fn())
-		})
+			onUnmountedCleanupFns.forEach((fn) => fn());
+		});
 		function addWindowListener(event, listener) {
-			window.addEventListener(event, listener)
-			const removeListener = () => window.removeEventListener(event, listener)
-			onUnmountedCleanupFns.push(removeListener)
+			window.addEventListener(event, listener);
+			const removeListener = () => window.removeEventListener(event, listener);
+			onUnmountedCleanupFns.push(removeListener);
 			return () => {
-				removeListener()
-				onUnmountedCleanupFns.splice(onUnmountedCleanupFns.indexOf(removeListener), 1)
-			}
+				removeListener();
+				onUnmountedCleanupFns.splice(onUnmountedCleanupFns.indexOf(removeListener), 1);
+			};
 		}
 		function useDragger(el, value, min, max, axis) {
 			function onMouseDown(event) {
-				var _a
-				event.preventDefault()
-				event.stopPropagation()
-				const start = axis === 'x' ? event.clientX : event.clientY
+				var _a;
+				event.preventDefault();
+				event.stopPropagation();
+				const start = axis === 'x' ? event.clientX : event.clientY;
 				const startValue =
 					(_a = value.value) != null
 						? _a
 						: axis === 'x'
 						? previewWrapper.value.clientWidth - 67
-						: previewWrapper.value.clientHeight - 70
-				resizing.value = true
+						: previewWrapper.value.clientHeight - 70;
+				resizing.value = true;
 				const removeListeners = [
 					addWindowListener('mousemove', onMouseMove),
 					addWindowListener('mouseup', onMouseUp)
-				]
+				];
 				function onMouseMove(event2) {
 					const snapTarget =
-						axis === 'x' ? previewWrapper.value.clientWidth : previewWrapper.value.clientHeight
-					const delta = (axis === 'x' ? event2.clientX : event2.clientY) - start
-					value.value = Math.max(min, Math.min(max, startValue + delta))
+						axis === 'x' ? previewWrapper.value.clientWidth : previewWrapper.value.clientHeight;
+					const delta = (axis === 'x' ? event2.clientX : event2.clientY) - start;
+					value.value = Math.max(min, Math.min(max, startValue + delta));
 					if (Math.abs(value.value - (snapTarget - 67)) < 16) {
-						value.value = null
+						value.value = null;
 					}
 				}
 				function onMouseUp() {
-					removeListeners.forEach((fn) => fn())
-					resizing.value = false
+					removeListeners.forEach((fn) => fn());
+					resizing.value = false;
 				}
 			}
-			useEventListener(el, 'mousedown', onMouseDown)
+			useEventListener(el, 'mousedown', onMouseDown);
 			function onTouchStart(event) {
-				event.preventDefault()
-				event.stopPropagation()
-				const start = axis === 'x' ? event.touches[0].clientX : event.touches[0].clientY
-				const startValue = value.value
-				resizing.value = true
+				event.preventDefault();
+				event.stopPropagation();
+				const start = axis === 'x' ? event.touches[0].clientX : event.touches[0].clientY;
+				const startValue = value.value;
+				resizing.value = true;
 				const removeListeners = [
 					addWindowListener('touchmove', onTouchMove),
 					addWindowListener('touchend', onTouchEnd),
 					addWindowListener('touchcancel', onTouchEnd)
-				]
+				];
 				function onTouchMove(event2) {
 					const delta =
-						(axis === 'x' ? event2.touches[0].clientX : event2.touches[0].clientY) - start
-					value.value = Math.max(min, Math.min(max, startValue + delta))
+						(axis === 'x' ? event2.touches[0].clientX : event2.touches[0].clientY) - start;
+					value.value = Math.max(min, Math.min(max, startValue + delta));
 				}
 				function onTouchEnd() {
-					removeListeners.forEach((fn) => fn())
-					resizing.value = false
+					removeListeners.forEach((fn) => fn());
+					resizing.value = false;
 				}
 			}
-			useEventListener(el, 'touchstart', onTouchStart)
+			useEventListener(el, 'touchstart', onTouchStart);
 		}
 		const responsiveWidth = computed({
 			get: () => settings[settings.rotate ? 'responsiveHeight' : 'responsiveWidth'],
 			set: (value) => {
-				settings[settings.rotate ? 'responsiveHeight' : 'responsiveWidth'] = value
+				settings[settings.rotate ? 'responsiveHeight' : 'responsiveWidth'] = value;
 			}
-		})
+		});
 		const responsiveHeight = computed({
 			get: () => settings[settings.rotate ? 'responsiveWidth' : 'responsiveHeight'],
 			set: (value) => {
-				settings[settings.rotate ? 'responsiveWidth' : 'responsiveHeight'] = value
+				settings[settings.rotate ? 'responsiveWidth' : 'responsiveHeight'] = value;
 			}
-		})
-		const horizontalDragger = ref()
-		const verticalDragger = ref()
-		const cornerDragger = ref()
-		const previewWrapper = ref()
-		useDragger(horizontalDragger, responsiveWidth, 32, 2e4, 'x')
-		useDragger(verticalDragger, responsiveHeight, 32, 2e4, 'y')
-		useDragger(cornerDragger, responsiveWidth, 32, 2e4, 'x')
-		useDragger(cornerDragger, responsiveHeight, 32, 2e4, 'y')
+		});
+		const horizontalDragger = ref();
+		const verticalDragger = ref();
+		const cornerDragger = ref();
+		const previewWrapper = ref();
+		useDragger(horizontalDragger, responsiveWidth, 32, 2e4, 'x');
+		useDragger(verticalDragger, responsiveHeight, 32, 2e4, 'y');
+		useDragger(cornerDragger, responsiveWidth, 32, 2e4, 'x');
+		useDragger(cornerDragger, responsiveHeight, 32, 2e4, 'y');
 		const finalWidth = computed(() =>
 			settings.rotate ? settings.responsiveHeight : settings.responsiveWidth
-		)
+		);
 		const finalHeight = computed(() =>
 			settings.rotate ? settings.responsiveWidth : settings.responsiveHeight
-		)
-		const isResponsiveEnabled = computed(() => !props.variant.responsiveDisabled)
+		);
+		const isResponsiveEnabled = computed(() => !props.variant.responsiveDisabled);
 		const sizeTooltip = computed(() => {
-			var _a, _b
+			var _a, _b;
 			return (
 				((_a = responsiveWidth.value) != null ? _a : 'Auto') +
 				' \xD7 ' +
 				((_b = responsiveHeight.value) != null ? _b : 'Auto')
-			)
-		})
+			);
+		});
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -1505,13 +1505,13 @@ const _sfc_main$l = /* @__PURE__ */ defineComponent({
 						512
 					)
 				])
-			)
-		}
+			);
+		};
 	}
-})
+});
 const StoryResponsivePreview = /* @__PURE__ */ _export_sfc(_sfc_main$l, [
 	['__scopeId', 'data-v-a83b1911']
-])
+]);
 const _sfc_main$k = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantSinglePreviewNative',
 	props: {
@@ -1519,18 +1519,18 @@ const _sfc_main$k = /* @__PURE__ */ defineComponent({
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		Object.assign(props.variant, {
 			previewReady: false
-		})
+		});
 		function onReady() {
 			Object.assign(props.variant, {
 				previewReady: true
-			})
+			});
 		}
-		const settings = usePreviewSettingsStore().currentSettings
-		const contrastColor = computed(() => getContrastColor(settings))
-		const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor)
+		const settings = usePreviewSettingsStore().currentSettings;
+		const contrastColor = computed(() => getContrastColor(settings));
+		const autoApplyContrastColor = computed(() => !!histoireConfig.autoApplyContrastColor);
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -1588,39 +1588,39 @@ const _sfc_main$k = /* @__PURE__ */ defineComponent({
 					8,
 					['variant']
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const useEventsStore = defineStore('events', () => {
-	const storyStore = useStoryStore()
-	const events = reactive([])
-	const unseen = ref(0)
+	const storyStore = useStoryStore();
+	const events = reactive([]);
+	const unseen = ref(0);
 	function addEvent(event) {
-		events.push(event)
-		unseen.value++
+		events.push(event);
+		unseen.value++;
 	}
 	function reset() {
-		events.length = 0
-		unseen.value = 0
+		events.length = 0;
+		unseen.value = 0;
 	}
 	watch(
 		() => {
-			var _a
-			return (_a = storyStore.currentVariant) == null ? void 0 : _a.id
+			var _a;
+			return (_a = storyStore.currentVariant) == null ? void 0 : _a.id;
 		},
 		() => {
-			reset()
+			reset();
 		}
-	)
+	);
 	return {
 		addEvent,
 		reset,
 		events,
 		unseen
-	}
-})
-const _hoisted_1$h = ['src']
+	};
+});
+const _hoisted_1$h = ['src'];
 const _sfc_main$j = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantSinglePreviewRemote',
 	props: {
@@ -1628,93 +1628,93 @@ const _sfc_main$j = /* @__PURE__ */ defineComponent({
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
-		const settings = usePreviewSettingsStore().currentSettings
-		const iframe = ref()
+		const props = __props;
+		const settings = usePreviewSettingsStore().currentSettings;
+		const iframe = ref();
 		function syncState() {
 			if (iframe.value && props.variant.previewReady) {
 				iframe.value.contentWindow.postMessage({
 					type: STATE_SYNC,
 					state: toRawDeep(props.variant.state, true)
-				})
+				});
 			}
 		}
-		let synced = false
+		let synced = false;
 		watch(
 			() => props.variant.state,
 			() => {
 				if (synced) {
-					synced = false
-					return
+					synced = false;
+					return;
 				}
-				syncState()
+				syncState();
 			},
 			{
 				deep: true,
 				immediate: true
 			}
-		)
+		);
 		Object.assign(props.variant, {
 			previewReady: false
-		})
+		});
 		useEventListener(window, 'message', (event) => {
 			switch (event.data.type) {
 				case STATE_SYNC:
-					updateVariantState(event.data.state)
-					break
+					updateVariantState(event.data.state);
+					break;
 				case EVENT_SEND:
-					logEvent(event.data.event)
-					break
+					logEvent(event.data.event);
+					break;
 				case SANDBOX_READY:
-					setPreviewReady()
-					break
+					setPreviewReady();
+					break;
 			}
-		})
+		});
 		function updateVariantState(state) {
-			synced = true
-			applyState(props.variant.state, state)
+			synced = true;
+			applyState(props.variant.state, state);
 		}
 		function logEvent(event) {
-			const eventsStore = useEventsStore()
-			eventsStore.addEvent(event)
+			const eventsStore = useEventsStore();
+			eventsStore.addEvent(event);
 		}
 		function setPreviewReady() {
 			Object.assign(props.variant, {
 				previewReady: true
-			})
+			});
 		}
 		const sandboxUrl = computed(() => {
-			return getSandboxUrl(props.story, props.variant)
-		})
-		const isIframeLoaded = ref(false)
+			return getSandboxUrl(props.story, props.variant);
+		});
+		const isIframeLoaded = ref(false);
 		watch(sandboxUrl, () => {
-			isIframeLoaded.value = false
+			isIframeLoaded.value = false;
 			Object.assign(props.variant, {
 				previewReady: false
-			})
-		})
+			});
+		});
 		function syncSettings() {
 			if (iframe.value) {
 				iframe.value.contentWindow.postMessage({
 					type: PREVIEW_SETTINGS_SYNC,
 					settings: toRaw(settings)
-				})
+				});
 			}
 		}
 		watch(
 			() => settings,
 			() => {
-				syncSettings()
+				syncSettings();
 			},
 			{
 				deep: true,
 				immediate: true
 			}
-		)
+		);
 		function onIframeLoad() {
-			isIframeLoaded.value = true
-			syncState()
-			syncSettings()
+			isIframeLoaded.value = true;
+			syncState();
+			syncSettings();
 		}
 		return (_ctx, _cache) => {
 			return (
@@ -1761,18 +1761,18 @@ const _sfc_main$j = /* @__PURE__ */ defineComponent({
 					8,
 					['variant']
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$g = {
 	class: 'histoire-story-variant-single-view htw-h-full htw-flex htw-flex-col',
 	'data-test-id': 'story-variant-single-view'
-}
+};
 const _hoisted_2$c = {
 	key: 0,
 	class: 'htw-flex-none htw-flex htw-items-center htw-h-8 -htw-mt-1'
-}
+};
 const _sfc_main$i = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantSingleView',
 	props: {
@@ -1781,7 +1781,7 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
 	},
 	setup(__props) {
 		return (_ctx, _cache) => {
-			var _a
+			var _a;
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$g, [
@@ -1832,28 +1832,28 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
 								['story', 'variant']
 						  ))
 				])
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$f = {
 	key: 0,
 	class: 'histoire-story-variant-single htw-p-2 htw-h-full __histoire-pane-shadow-from-right'
-}
+};
 const _hoisted_2$b = {
 	key: 0,
 	class:
 		'htw-divide-y htw-divide-gray-100 dark:htw-divide-gray-800 htw-h-full htw-flex htw-flex-col'
-}
+};
 const _hoisted_3$7 = {
 	key: 0,
 	class: 'htw-p-2 htw-h-full'
-}
-const _hoisted_4$5 = { class: 'htw-h-full htw-overflow-y-auto' }
+};
+const _hoisted_4$5 = { class: 'htw-h-full htw-overflow-y-auto' };
 const _hoisted_5$2 = {
 	key: 0,
 	class: 'htw-p-2 htw-h-full __histoire-pane-shadow-from-right'
-}
+};
 const _sfc_main$h = /* @__PURE__ */ defineComponent({
 	__name: 'StoryVariantSingle',
 	emits: {
@@ -1861,19 +1861,19 @@ const _sfc_main$h = /* @__PURE__ */ defineComponent({
 	},
 	setup(__props) {
 		useCssVars((_ctx) => {
-			var _a
+			var _a;
 			return {
 				'4d25d048': (_a = unref(variant)) == null ? void 0 : _a.iconColor
-			}
-		})
-		const storyStore = useStoryStore()
+			};
+		});
+		const storyStore = useStoryStore();
 		const hasSingleVariant = computed(() => {
-			var _a
-			return ((_a = storyStore.currentStory) == null ? void 0 : _a.variants.length) === 1
-		})
-		const variant = computed(() => storyStore.currentVariant)
+			var _a;
+			return ((_a = storyStore.currentStory) == null ? void 0 : _a.variants.length) === 1;
+		});
+		const variant = computed(() => storyStore.currentVariant);
 		return (_ctx, _cache) => {
-			var _a
+			var _a;
 			return unref(hasSingleVariant) && unref(variant)
 				? (openBlock(),
 				  createElementBlock('div', _hoisted_1$f, [
@@ -1990,7 +1990,7 @@ const _sfc_main$h = /* @__PURE__ */ defineComponent({
 																	8,
 																	['variant']
 																)
-															)
+															);
 														}),
 														128
 													))
@@ -2018,34 +2018,34 @@ const _sfc_main$h = /* @__PURE__ */ defineComponent({
 								  ))
 						],
 						64
-				  ))
-		}
+				  ));
+		};
 	}
-})
+});
 const StoryVariantSingle = /* @__PURE__ */ _export_sfc(_sfc_main$h, [
 	['__scopeId', 'data-v-ddfc5b4f']
-])
+]);
 const _hoisted_1$e = {
 	class: 'histoire-story-viewer htw-bg-gray-50 htw-h-full dark:htw-bg-gray-750'
-}
+};
 const _sfc_main$g = /* @__PURE__ */ defineComponent({
 	__name: 'StoryViewer',
 	setup(__props) {
 		useCssVars((_ctx) => {
-			var _a
+			var _a;
 			return {
 				'663732b6': (_a = unref(variant)) == null ? void 0 : _a.iconColor
-			}
-		})
-		const storyStore = useStoryStore()
-		const variant = computed(() => storyStore.currentVariant)
-		const isMenuOpened = ref(false)
+			};
+		});
+		const storyStore = useStoryStore();
+		const variant = computed(() => storyStore.currentVariant);
+		const isMenuOpened = ref(false);
 		function closeMenu() {
-			isMenuOpened.value = false
+			isMenuOpened.value = false;
 		}
 		watch(variant, () => {
-			isMenuOpened.value = false
-		})
+			isMenuOpened.value = false;
+		});
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -2091,7 +2091,7 @@ const _sfc_main$g = /* @__PURE__ */ defineComponent({
 													8,
 													['variant']
 												)
-											)
+											);
 										}),
 										128
 									))
@@ -2104,18 +2104,18 @@ const _sfc_main$g = /* @__PURE__ */ defineComponent({
 					],
 					64
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const StoryViewer = /* @__PURE__ */ _export_sfc(_sfc_main$g, [['__scopeId', 'data-v-6046525f']])
+});
+const StoryViewer = /* @__PURE__ */ _export_sfc(_sfc_main$g, [['__scopeId', 'data-v-6046525f']]);
 const _hoisted_1$d = {
 	class:
 		'htw-cursor-pointer htw-w-full htw-outline-none htw-px-2 htw-h-[27px] -htw-my-1 htw-border htw-border-solid htw-border-black/25 dark:htw-border-white/25 hover:htw-border-primary-500 dark:hover:htw-border-primary-500 htw-rounded-sm htw-flex htw-gap-2 htw-items-center htw-leading-normal'
-}
-const _hoisted_2$a = { class: 'htw-flex-1 htw-truncate' }
-const _hoisted_3$6 = { class: 'htw-flex htw-flex-col htw-bg-gray-50 dark:htw-bg-gray-700' }
-const _hoisted_4$4 = ['onClick']
+};
+const _hoisted_2$a = { class: 'htw-flex-1 htw-truncate' };
+const _hoisted_3$6 = { class: 'htw-flex htw-flex-col htw-bg-gray-50 dark:htw-bg-gray-700' };
+const _hoisted_4$4 = ['onClick'];
 const _sfc_main$f = /* @__PURE__ */ defineComponent({
 	__name: 'BaseSelect',
 	props: {
@@ -2124,18 +2124,18 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
 	},
 	emits: ['update:modelValue', 'select'],
 	setup(__props, { emit: emits }) {
-		const props = __props
+		const props = __props;
 		const formattedOptions = computed(() => {
 			if (Array.isArray(props.options)) {
-				return Object.fromEntries(props.options.map((value) => [value, value]))
+				return Object.fromEntries(props.options.map((value) => [value, value]));
 			}
-			return props.options
-		})
-		const selectedLabel = computed(() => formattedOptions.value[props.modelValue])
+			return props.options;
+		});
+		const selectedLabel = computed(() => formattedOptions.value[props.modelValue]);
 		function selectValue(value, hide) {
-			emits('update:modelValue', value)
-			emits('select', value)
-			hide()
+			emits('update:modelValue', value);
+			emits('select', value);
+			hide();
 		}
 		return (_ctx, _cache) => {
 			return (
@@ -2186,7 +2186,7 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
 												16,
 												_hoisted_4$4
 											)
-										)
+										);
 									}),
 									128
 								))
@@ -2208,21 +2208,21 @@ const _sfc_main$f = /* @__PURE__ */ defineComponent({
 						_: 3
 					}
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$c = {
 	class: 'histoire-state-presets htw-flex htw-gap-2 htw-w-full htw-items-center'
-}
-const _hoisted_2$9 = ['onUpdate:modelValue']
+};
+const _hoisted_2$9 = ['onUpdate:modelValue'];
 const _hoisted_3$5 = {
 	key: 1,
 	class: 'htw-flex htw-items-center htw-gap-2'
-}
-const _hoisted_4$3 = { class: 'htw-flex-1 htw-truncate' }
-const _hoisted_5$1 = { class: 'htw-flex htw-gap-2 htw-items-center' }
-const _hoisted_6$1 = { class: 'htw-flex-1 htw-truncate' }
+};
+const _hoisted_4$3 = { class: 'htw-flex-1 htw-truncate' };
+const _hoisted_5$1 = { class: 'htw-flex htw-gap-2 htw-items-center' };
+const _hoisted_6$1 = { class: 'htw-flex-1 htw-truncate' };
 const _sfc_main$e = /* @__PURE__ */ defineComponent({
 	__name: 'StatePresets',
 	props: {
@@ -2230,88 +2230,88 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
-		const DEFAULT_ID = 'default'
-		const saveId = computed(() => `${props.story.id}:${props.variant.id}`)
-		const omitKeys = ['_hPropDefs']
-		const defaultState = clone(omit(toRawDeep(props.variant.state), omitKeys))
-		const selectedOption = useStorage(`_histoire-presets/${saveId.value}/selected`, DEFAULT_ID)
+		const props = __props;
+		const DEFAULT_ID = 'default';
+		const saveId = computed(() => `${props.story.id}:${props.variant.id}`);
+		const omitKeys = ['_hPropDefs'];
+		const defaultState = clone(omit(toRawDeep(props.variant.state), omitKeys));
+		const selectedOption = useStorage(`_histoire-presets/${saveId.value}/selected`, DEFAULT_ID);
 		const presetStates = useStorage(
 			`_histoire-presets/${saveId.value}/states`,
 			/* @__PURE__ */ new Map()
-		)
+		);
 		const presetsOptions = computed(() => {
-			const options = { [DEFAULT_ID]: 'Initial state' }
+			const options = { [DEFAULT_ID]: 'Initial state' };
 			presetStates.value.forEach((value, key) => {
-				options[key] = value.label
-			})
-			return options
-		})
+				options[key] = value.label;
+			});
+			return options;
+		});
 		function resetState() {
-			selectedOption.value = DEFAULT_ID
-			applyState(props.variant.state, clone(defaultState))
+			selectedOption.value = DEFAULT_ID;
+			applyState(props.variant.state, clone(defaultState));
 		}
 		function applyPreset(id) {
 			if (id === DEFAULT_ID) {
-				resetState()
+				resetState();
 			} else if (presetStates.value.has(id)) {
-				applyState(props.variant.state, clone(toRawDeep(presetStates.value.get(id).state)))
+				applyState(props.variant.state, clone(toRawDeep(presetStates.value.get(id).state)));
 			}
 		}
 		onMounted(() => {
 			if (selectedOption.value !== DEFAULT_ID) {
-				applyPreset(selectedOption.value)
+				applyPreset(selectedOption.value);
 			}
-		})
-		const input = ref()
-		const select = ref()
-		const canEdit = computed(() => selectedOption.value !== DEFAULT_ID)
-		const isEditing = ref(false)
+		});
+		const input = ref();
+		const select = ref();
+		const canEdit = computed(() => selectedOption.value !== DEFAULT_ID);
+		const isEditing = ref(false);
 		async function createPreset() {
-			const id = new Date().getTime().toString()
+			const id = new Date().getTime().toString();
 			presetStates.value.set(id, {
 				state: clone(omit(toRawDeep(props.variant.state), omitKeys)),
 				label: 'New preset'
-			})
-			selectedOption.value = id
-			isEditing.value = true
-			await nextTick()
-			input.value.select()
+			});
+			selectedOption.value = id;
+			isEditing.value = true;
+			await nextTick();
+			input.value.select();
 		}
-		const savedNotif = ref(false)
+		const savedNotif = ref(false);
 		const savedTimeout = useTimeoutFn(() => {
-			savedNotif.value = false
-		}, 1e3)
+			savedNotif.value = false;
+		}, 1e3);
 		async function savePreset() {
-			if (!canEdit.value) return
-			const preset = presetStates.value.get(selectedOption.value)
-			preset.state = clone(omit(toRawDeep(props.variant.state), omitKeys))
-			savedNotif.value = true
-			savedTimeout.start()
+			if (!canEdit.value) return;
+			const preset = presetStates.value.get(selectedOption.value);
+			preset.state = clone(omit(toRawDeep(props.variant.state), omitKeys));
+			savedNotif.value = true;
+			savedTimeout.start();
 		}
 		function deletePreset(id) {
 			if (!confirm('Are you sure you want to delete this preset?')) {
-				return
+				return;
 			}
 			if (selectedOption.value === id) {
-				resetState()
+				resetState();
 			}
-			presetStates.value.delete(id)
+			presetStates.value.delete(id);
 		}
 		async function startEditing() {
 			if (!canEdit.value) {
-				return
+				return;
 			}
-			isEditing.value = true
-			await nextTick()
-			input.value.select()
+			isEditing.value = true;
+			await nextTick();
+			input.value.select();
 		}
 		function stopEditing() {
-			isEditing.value = false
+			isEditing.value = false;
 		}
-		onClickOutside(select, stopEditing)
+		onClickOutside(select, stopEditing);
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$c, [
@@ -2480,10 +2480,10 @@ const _sfc_main$e = /* @__PURE__ */ defineComponent({
 						[[_directive_tooltip, 'Reset to initial state']]
 					)
 				])
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _sfc_main$d = /* @__PURE__ */ defineComponent({
 	__name: 'ControlsComponentPropItem',
 	props: {
@@ -2492,51 +2492,51 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
 		definition: null
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		const comp = computed(() => {
-			var _a
+			var _a;
 			switch ((_a = props.definition.types) == null ? void 0 : _a[0]) {
 				case 'string':
-					return Eg
+					return Eg;
 				case 'number':
-					return Ng
+					return Ng;
 				case 'boolean':
-					return Rg
+					return Rg;
 				case 'object':
 				default:
-					return jg
+					return jg;
 			}
-		})
+		});
 		const model = computed({
 			get: () => {
-				var _a
+				var _a;
 				return (_a = props.variant.state._hPropState[props.component.index]) == null
 					? void 0
-					: _a[props.definition.name]
+					: _a[props.definition.name];
 			},
 			set: (value) => {
 				if (!props.variant.state._hPropState[props.component.index]) {
-					props.variant.state._hPropState[props.component.index] = {}
+					props.variant.state._hPropState[props.component.index] = {};
 				}
-				props.variant.state._hPropState[props.component.index][props.definition.name] = value
+				props.variant.state._hPropState[props.component.index][props.definition.name] = value;
 			}
-		})
+		});
 		function reset() {
 			if (props.variant.state._hPropState[props.component.index]) {
-				delete props.variant.state._hPropState[props.component.index][props.definition.name]
+				delete props.variant.state._hPropState[props.component.index][props.definition.name];
 			}
 		}
 		const canReset = computed(() => {
-			var _a, _b
+			var _a, _b;
 			return (
 				((_b = (_a = props.variant.state) == null ? void 0 : _a._hPropState) == null
 					? void 0
 					: _b[props.component.index]) &&
 				props.definition.name in props.variant.state._hPropState[props.component.index]
-			)
-		})
+			);
+		});
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return unref(comp)
 				? (openBlock(),
 				  createBlock(
@@ -2580,14 +2580,14 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
 						8,
 						['modelValue', 'title']
 				  ))
-				: createCommentVNode('', true)
-		}
+				: createCommentVNode('', true);
+		};
 	}
-})
-const _hoisted_1$b = { class: 'histoire-controls-component-props' }
-const _hoisted_2$8 = { class: 'htw-font-mono htw-p-2 htw-flex htw-items-center htw-gap-1' }
-const _hoisted_3$4 = /* @__PURE__ */ createBaseVNode('span', { class: 'htw-opacity-30' }, '<', -1)
-const _hoisted_4$2 = /* @__PURE__ */ createBaseVNode('span', { class: 'htw-opacity-30' }, '>', -1)
+});
+const _hoisted_1$b = { class: 'histoire-controls-component-props' };
+const _hoisted_2$8 = { class: 'htw-font-mono htw-p-2 htw-flex htw-items-center htw-gap-1' };
+const _hoisted_3$4 = /* @__PURE__ */ createBaseVNode('span', { class: 'htw-opacity-30' }, '<', -1);
+const _hoisted_4$2 = /* @__PURE__ */ createBaseVNode('span', { class: 'htw-opacity-30' }, '>', -1);
 const _sfc_main$c = /* @__PURE__ */ defineComponent({
 	__name: 'ControlsComponentProps',
 	props: {
@@ -2596,7 +2596,7 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
 	},
 	setup(__props) {
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$b, [
@@ -2638,28 +2638,28 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
 									8,
 									['variant', 'component', 'definition']
 								)
-							)
+							);
 						}),
 						128
 					))
 				])
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$a = {
 	'data-test-id': 'story-controls',
 	class:
 		'histoire-story-controls htw-flex htw-flex-col htw-divide-y htw-divide-gray-100 dark:htw-divide-gray-750'
-}
-const _hoisted_2$7 = { class: 'htw-h-9 htw-flex-none htw-px-2 htw-flex htw-items-center' }
+};
+const _hoisted_2$7 = { class: 'htw-h-9 htw-flex-none htw-px-2 htw-flex htw-items-center' };
 const _hoisted_3$3 = /* @__PURE__ */ createBaseVNode(
 	'span',
 	null,
 	'No controls available for this story',
 	-1
-)
-const _hoisted_4$1 = { key: 2 }
+);
+const _hoisted_4$1 = { key: 2 };
 const _sfc_main$b = /* @__PURE__ */ defineComponent({
 	__name: 'StoryControls',
 	props: {
@@ -2673,19 +2673,19 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
 		}
 	},
 	setup(__props) {
-		const props = __props
-		const ready = ref(false)
+		const props = __props;
+		const ready = ref(false);
 		watch(
 			() => props.variant,
 			() => {
-				ready.value = false
+				ready.value = false;
 			}
-		)
+		);
 		const hasCustomControls = computed(
 			() => props.variant.slots().controls || props.story.slots().controls
-		)
+		);
 		return (_ctx, _cache) => {
-			var _a, _b, _c, _d
+			var _a, _b, _c, _d;
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$a, [
@@ -2766,49 +2766,49 @@ const _sfc_main$b = /* @__PURE__ */ defineComponent({
 												8,
 												['variant', 'definition']
 											)
-										)
+										);
 									}),
 									128
 								))
 						  ]))
 						: createCommentVNode('', true)
 				])
-			)
-		}
+			);
+		};
 	}
-})
-const markdownFiles = reactive({})
-const _hoisted_1$9 = ['innerHTML']
+});
+const markdownFiles = reactive({});
+const _hoisted_1$9 = ['innerHTML'];
 function useStoryDoc(story) {
-	const renderedDoc = ref('')
+	const renderedDoc = ref('');
 	watchEffect(async () => {
-		var _a
-		const mdKey = story.value.file.filePath.replace(/\.(\w*?)$/, '.md')
+		var _a;
+		const mdKey = story.value.file.filePath.replace(/\.(\w*?)$/, '.md');
 		if (markdownFiles[mdKey]) {
-			const md = await markdownFiles[mdKey]()
-			renderedDoc.value = md.html
-			return
+			const md = await markdownFiles[mdKey]();
+			renderedDoc.value = md.html;
+			return;
 		}
-		let comp = (_a = story.value.file) == null ? void 0 : _a.component
+		let comp = (_a = story.value.file) == null ? void 0 : _a.component;
 		if (comp) {
 			if (comp.__asyncResolved) {
-				comp = comp.__asyncResolved
+				comp = comp.__asyncResolved;
 			} else if (comp.__asyncLoader) {
-				comp = await comp.__asyncLoader()
+				comp = await comp.__asyncLoader();
 			} else if (typeof comp === 'function') {
 				try {
-					comp = await comp()
+					comp = await comp();
 				} catch (e) {}
 			}
 			if (comp == null ? void 0 : comp.default) {
-				comp = comp.default
+				comp = comp.default;
 			}
-			renderedDoc.value = comp.doc
+			renderedDoc.value = comp.doc;
 		}
-	})
+	});
 	return {
 		renderedDoc
-	}
+	};
 }
 const _sfc_main$a = /* @__PURE__ */ defineComponent({
 	__name: 'StoryDocs',
@@ -2819,13 +2819,13 @@ const _sfc_main$a = /* @__PURE__ */ defineComponent({
 		}
 	},
 	setup(__props) {
-		const props = __props
-		const { story } = toRefs(props)
-		const { renderedDoc } = useStoryDoc(story)
-		const router = useRouter()
-		const fakeHost = `http://a.com`
+		const props = __props;
+		const { story } = toRefs(props);
+		const { renderedDoc } = useStoryDoc(story);
+		const router = useRouter();
+		const fakeHost = `http://a.com`;
 		function onClick(e) {
-			const link = e.target.closest('a')
+			const link = e.target.closest('a');
 			if (
 				link &&
 				link.getAttribute('data-route') &&
@@ -2835,10 +2835,10 @@ const _sfc_main$a = /* @__PURE__ */ defineComponent({
 				!e.metaKey &&
 				link.target !== `_blank`
 			) {
-				e.preventDefault()
-				const url = new URL(link.href, fakeHost)
-				const targetHref = url.pathname + url.search + url.hash
-				router.push(targetHref)
+				e.preventDefault();
+				const url = new URL(link.href, fakeHost);
+				const targetHref = url.pathname + url.search + url.hash;
+				router.push(targetHref);
 			}
 		}
 		return (_ctx, _cache) => {
@@ -2883,37 +2883,37 @@ const _sfc_main$a = /* @__PURE__ */ defineComponent({
 					],
 					32
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _hoisted_1$8 = {
 	key: 0,
 	class: 'htw-text-xs htw-opacity-50 htw-truncate'
-}
-const _hoisted_2$6 = { class: 'htw-overflow-auto htw-max-w-[400px] htw-max-h-[400px]' }
-const _hoisted_3$2 = { class: 'htw-p-4' }
+};
+const _hoisted_2$6 = { class: 'htw-overflow-auto htw-max-w-[400px] htw-max-h-[400px]' };
+const _hoisted_3$2 = { class: 'htw-p-4' };
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
 	__name: 'StoryEvent',
 	props: {
 		event: null
 	},
 	setup(__props) {
-		const props = __props
+		const props = __props;
 		const formattedArgument = computed(() => {
 			switch (typeof props.event.argument) {
 				case 'string':
-					return `"${props.event.argument}"`
+					return `"${props.event.argument}"`;
 				case 'object':
 					return `{ ${Object.keys(props.event.argument)
 						.map((key) => `${key}: ${props.event.argument[key]}`)
-						.join(', ')} }`
+						.join(', ')} }`;
 				default:
-					return props.event.argument
+					return props.event.argument;
 			}
-		})
+		});
 		return (_ctx, _cache) => {
-			const _component_VDropdown = resolveComponent('VDropdown')
+			const _component_VDropdown = resolveComponent('VDropdown');
 			return (
 				openBlock(),
 				createBlock(
@@ -2969,26 +2969,26 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
 						_: 1
 					}
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const _hoisted_1$7 = { key: 1 }
+});
+const _hoisted_1$7 = { key: 1 };
 const _sfc_main$8 = /* @__PURE__ */ defineComponent({
 	__name: 'StoryEvents',
 	setup(__props) {
-		const eventsStore = useEventsStore()
-		const hasEvents = computed(() => eventsStore.events.length)
-		onMounted(resetUnseen)
-		watch(() => eventsStore.unseen, resetUnseen)
+		const eventsStore = useEventsStore();
+		const hasEvents = computed(() => eventsStore.events.length);
+		onMounted(resetUnseen);
+		watch(() => eventsStore.unseen, resetUnseen);
 		async function resetUnseen() {
 			if (eventsStore.unseen > 0) {
-				eventsStore.unseen = 0
+				eventsStore.unseen = 0;
 			}
-			await nextTick()
-			eventsElement.value.scrollTo({ top: eventsElement.value.scrollHeight })
+			await nextTick();
+			eventsElement.value.scrollTo({ top: eventsElement.value.scrollHeight });
 		}
-		const eventsElement = ref()
+		const eventsElement = ref();
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -3035,7 +3035,7 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
 													8,
 													['event']
 												)
-											)
+											);
 										}),
 										128
 									))
@@ -3043,20 +3043,20 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
 					],
 					512
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const _withScopeId = (n) => (pushScopeId('data-v-36810e45'), (n = n()), popScopeId(), n)
+});
+const _withScopeId = (n) => (pushScopeId('data-v-36810e45'), (n = n()), popScopeId(), n);
 const _hoisted_1$6 = {
 	class:
 		'histoire-story-source-code htw-bg-gray-50 dark:htw-bg-gray-750 htw-h-full htw-overflow-hidden htw-flex htw-flex-col'
-}
+};
 const _hoisted_2$5 = {
 	key: 0,
 	class:
 		'htw-h-10 htw-flex-none htw-border-b htw-border-solid htw-border-gray-500/5 htw-px-4 htw-flex htw-items-center htw-gap-2'
-}
+};
 const _hoisted_3$1 = /* @__PURE__ */ _withScopeId(() =>
 	/* @__PURE__ */ createBaseVNode(
 		'div',
@@ -3064,20 +3064,20 @@ const _hoisted_3$1 = /* @__PURE__ */ _withScopeId(() =>
 		' Source ',
 		-1
 	)
-)
+);
 const _hoisted_4 = /* @__PURE__ */ _withScopeId(() =>
 	/* @__PURE__ */ createBaseVNode('div', { class: 'htw-flex-1' }, null, -1)
-)
-const _hoisted_5 = { class: 'htw-flex htw-flex-none htw-gap-px htw-h-full htw-py-2' }
+);
+const _hoisted_5 = { class: 'htw-flex htw-flex-none htw-gap-px htw-h-full htw-py-2' };
 const _hoisted_6 = {
 	key: 1,
 	class: 'htw-text-red-500 htw-h-full htw-p-2 htw-overflow-auto htw-font-mono htw-text-sm'
-}
+};
 const _hoisted_7 = /* @__PURE__ */ _withScopeId(() =>
 	/* @__PURE__ */ createBaseVNode('span', null, 'Not available', -1)
-)
-const _hoisted_8 = ['value']
-const _hoisted_9 = ['innerHTML']
+);
+const _hoisted_8 = ['value'];
+const _hoisted_9 = ['innerHTML'];
 const _sfc_main$7 = /* @__PURE__ */ defineComponent({
 	__name: 'StorySourceCode',
 	props: {
@@ -3085,89 +3085,89 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
-		const generateSourceCodeFn = ref(null)
+		const props = __props;
+		const generateSourceCodeFn = ref(null);
 		watchEffect(async () => {
-			var _a
+			var _a;
 			const clientPlugin =
-				clientSupportPlugins[(_a = props.story.file) == null ? void 0 : _a.supportPluginId]
+				clientSupportPlugins[(_a = props.story.file) == null ? void 0 : _a.supportPluginId];
 			if (clientPlugin) {
-				const pluginModule = await clientPlugin()
-				generateSourceCodeFn.value = markRaw(pluginModule.generateSourceCode)
+				const pluginModule = await clientPlugin();
+				generateSourceCodeFn.value = markRaw(pluginModule.generateSourceCode);
 			}
-		})
-		const highlighter = shallowRef()
-		const dynamicSourceCode = ref('')
-		const error = ref(null)
+		});
+		const highlighter = shallowRef();
+		const dynamicSourceCode = ref('');
+		const error = ref(null);
 		watch(
 			() => [props.variant, generateSourceCodeFn.value],
 			async () => {
-				var _a, _b, _c, _d
-				if (!generateSourceCodeFn.value) return
-				error.value = null
-				dynamicSourceCode.value = ''
+				var _a, _b, _c, _d;
+				if (!generateSourceCodeFn.value) return;
+				error.value = null;
+				dynamicSourceCode.value = '';
 				try {
 					if (props.variant.source) {
-						dynamicSourceCode.value = props.variant.source
+						dynamicSourceCode.value = props.variant.source;
 					} else if ((_b = (_a = props.variant).slots) == null ? void 0 : _b.call(_a).source) {
 						const source =
-							(_d = (_c = props.variant).slots) == null ? void 0 : _d.call(_c).source()[0].children
+							(_d = (_c = props.variant).slots) == null ? void 0 : _d.call(_c).source()[0].children;
 						if (source) {
-							dynamicSourceCode.value = await unindent(source)
+							dynamicSourceCode.value = await unindent(source);
 						}
 					} else {
-						dynamicSourceCode.value = await generateSourceCodeFn.value(props.variant)
+						dynamicSourceCode.value = await generateSourceCodeFn.value(props.variant);
 					}
 				} catch (e) {
-					console.error(e)
-					error.value = e.message
+					console.error(e);
+					error.value = e.message;
 				}
 				if (!dynamicSourceCode.value) {
-					displayedSource.value = 'static'
+					displayedSource.value = 'static';
 				}
 			},
 			{
 				deep: true,
 				immediate: true
 			}
-		)
-		const staticSourceCode = ref('')
+		);
+		const staticSourceCode = ref('');
 		watch(
 			() => {
-				var _a, _b
+				var _a, _b;
 				return [
 					props.story,
 					(_b = (_a = props.story) == null ? void 0 : _a.file) == null ? void 0 : _b.source
-				]
+				];
 			},
 			async () => {
-				var _a
-				staticSourceCode.value = ''
-				const sourceLoader = (_a = props.story.file) == null ? void 0 : _a.source
+				var _a;
+				staticSourceCode.value = '';
+				const sourceLoader = (_a = props.story.file) == null ? void 0 : _a.source;
 				if (sourceLoader) {
-					staticSourceCode.value = (await sourceLoader()).default
+					staticSourceCode.value = (await sourceLoader()).default;
 				}
 			},
 			{
 				immediate: true
 			}
-		)
-		const displayedSource = ref('dynamic')
+		);
+		const displayedSource = ref('dynamic');
 		const displayedSourceCode = computed(() => {
 			if (displayedSource.value === 'dynamic') {
-				return dynamicSourceCode.value
+				return dynamicSourceCode.value;
 			}
-			return staticSourceCode.value
-		})
+			return staticSourceCode.value;
+		});
 		onMounted(async () => {
-			setCDN('https://unpkg.com/shiki@0.10.1/')
+			setCDN('https://unpkg.com/shiki@0.10.1/');
 			highlighter.value = await getHighlighter({
 				langs: ['html', 'jsx'],
 				themes: ['github-light', 'github-dark']
-			})
-		})
+			});
+		});
 		const sourceHtml = computed(() => {
-			var _a
+			var _a;
 			return displayedSourceCode.value
 				? (_a = highlighter.value) == null
 					? void 0
@@ -3175,29 +3175,29 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
 							lang: 'html',
 							theme: isDark.value ? 'github-dark' : 'github-light'
 					  })
-				: ''
-		})
-		let lastScroll = 0
+				: '';
+		});
+		let lastScroll = 0;
 		watch(
 			() => props.variant,
 			() => {
-				lastScroll = 0
+				lastScroll = 0;
 			}
-		)
-		const scroller = ref()
+		);
+		const scroller = ref();
 		function onScroll(event) {
 			if (sourceHtml.value) {
-				lastScroll = event.target.scrollTop
+				lastScroll = event.target.scrollTop;
 			}
 		}
 		watch(sourceHtml, async () => {
-			await nextTick()
+			await nextTick();
 			if (scroller.value) {
-				scroller.value.scrollTop = lastScroll
+				scroller.value.scrollTop = lastScroll;
 			}
-		})
+		});
 		return (_ctx, _cache) => {
-			const _directive_tooltip = resolveDirective('tooltip')
+			const _directive_tooltip = resolveDirective('tooltip');
 			return (
 				openBlock(),
 				createElementBlock('div', _hoisted_1$6, [
@@ -3390,11 +3390,13 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
 								544
 						  ))
 				])
-			)
-		}
+			);
+		};
 	}
-})
-const StorySourceCode = /* @__PURE__ */ _export_sfc(_sfc_main$7, [['__scopeId', 'data-v-36810e45']])
+});
+const StorySourceCode = /* @__PURE__ */ _export_sfc(_sfc_main$7, [
+	['__scopeId', 'data-v-36810e45']
+]);
 const _sfc_main$6 = defineComponent({
 	inheritAttrs: false,
 	props: {
@@ -3407,15 +3409,15 @@ const _sfc_main$6 = defineComponent({
 			default: null
 		}
 	}
-})
-const _hoisted_1$5 = ['href', 'onClick']
+});
+const _hoisted_1$5 = ['href', 'onClick'];
 const _hoisted_2$4 = {
 	key: 0,
 	class:
 		'htw-absolute htw-bottom-0 htw-left-0 htw-w-full htw-h-[2px] htw-bg-primary-500 dark:htw-bg-primary-400'
-}
+};
 function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-	const _component_router_link = resolveComponent('router-link')
+	const _component_router_link = resolveComponent('router-link');
 	return (
 		openBlock(),
 		createBlock(
@@ -3466,72 +3468,72 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
 			},
 			16
 		)
-	)
+	);
 }
-const BaseTab = /* @__PURE__ */ _export_sfc(_sfc_main$6, [['render', _sfc_render$2]])
+const BaseTab = /* @__PURE__ */ _export_sfc(_sfc_main$6, [['render', _sfc_render$2]]);
 const _hoisted_1$4 = {
 	role: 'button',
 	class:
 		'htw-cursor-pointer hover:htw-bg-primary-50 dark:hover:htw-bg-primary-900 htw-w-8 htw-h-full htw-flex htw-items-center htw-justify-center htw-absolute htw-top-0 htw-right-0'
-}
-const _hoisted_2$3 = { class: 'htw-flex htw-flex-col htw-items-stretch' }
+};
+const _hoisted_2$3 = { class: 'htw-flex htw-flex-col htw-items-stretch' };
 const _sfc_main$5 = /* @__PURE__ */ defineComponent({
 	__name: 'BaseOverflowMenu',
 	setup(__props) {
-		const overflowButtonWidth = 32
-		const el = ref()
-		const availableWidth = ref(0)
+		const overflowButtonWidth = 32;
+		const el = ref();
+		const availableWidth = ref(0);
 		useResizeObserver(el, (entries) => {
-			const containerWidth = entries[0].contentRect.width
-			availableWidth.value = containerWidth - overflowButtonWidth
-		})
-		const children = ref(/* @__PURE__ */ new Map())
+			const containerWidth = entries[0].contentRect.width;
+			availableWidth.value = containerWidth - overflowButtonWidth;
+		});
+		const children = ref(/* @__PURE__ */ new Map());
 		const visibleChildrenCount = computed(() => {
-			let width = 0
-			const c = [...children.value.values()].sort((a, b) => a.index - b.index)
+			let width = 0;
+			const c = [...children.value.values()].sort((a, b) => a.index - b.index);
 			for (let i = 0; i < c.length; i++) {
-				width += c[i].width
+				width += c[i].width;
 				if (width > availableWidth.value) {
-					return i
+					return i;
 				}
 			}
-			return c.length
-		})
+			return c.length;
+		});
 		const ChildWrapper = {
 			name: 'ChildWrapper',
 			props: ['index'],
 			setup(props, { slots }) {
-				const el2 = ref()
-				const state = reactive({ width: 0, index: props.index })
+				const el2 = ref();
+				const state = reactive({ width: 0, index: props.index });
 				useResizeObserver(el2, (entries) => {
-					const width = entries[0].contentRect.width
+					const width = entries[0].contentRect.width;
 					if (!children.value.has(el2.value)) {
-						children.value.set(el2.value, state)
+						children.value.set(el2.value, state);
 					}
-					state.width = width
-				})
+					state.width = width;
+				});
 				onBeforeUnmount(() => {
-					children.value.delete(el2.value)
-				})
-				const visible = computed(() => visibleChildrenCount.value > state.index)
+					children.value.delete(el2.value);
+				});
+				const visible = computed(() => visibleChildrenCount.value > state.index);
 				return () =>
 					h(
 						'div',
 						{ ref: el2, style: { visibility: visible.value ? 'visible' : 'hidden' } },
 						slots.default()
-					)
+					);
 			}
-		}
+		};
 		const ChildrenRender = (props, { slots }) => {
-			const [fragment] = slots.default()
-			return fragment.children.map((vnode, index) => h(ChildWrapper, { index }, () => [vnode]))
-		}
+			const [fragment] = slots.default();
+			return fragment.children.map((vnode, index) => h(ChildWrapper, { index }, () => [vnode]));
+		};
 		const ChildrenSlice = (props, { slots }) => {
-			const [fragment] = slots.default()
-			return fragment.children.slice(props.start, props.end)
-		}
+			const [fragment] = slots.default();
+			return fragment.children.slice(props.start, props.end);
+		};
 		return (_ctx, _cache) => {
-			const _component_VDropdown = resolveComponent('VDropdown')
+			const _component_VDropdown = resolveComponent('VDropdown');
 			return (
 				openBlock(),
 				createElementBlock(
@@ -3581,10 +3583,10 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
 					],
 					512
 				)
-			)
-		}
+			);
+		};
 	}
-})
+});
 const _sfc_main$4 = defineComponent({
 	inheritAttrs: false,
 	props: {
@@ -3597,15 +3599,15 @@ const _sfc_main$4 = defineComponent({
 			default: null
 		}
 	}
-})
-const _hoisted_1$3 = ['href', 'onClick']
+});
+const _hoisted_1$3 = ['href', 'onClick'];
 const _hoisted_2$2 = {
 	key: 0,
 	class:
 		'htw-absolute htw-top-0 htw-left-0 htw-h-full htw-w-[2px] htw-bg-primary-500 dark:htw-bg-primary-400'
-}
+};
 function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-	const _component_router_link = resolveComponent('router-link')
+	const _component_router_link = resolveComponent('router-link');
 	return (
 		openBlock(),
 		createBlock(
@@ -3656,18 +3658,20 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
 			},
 			16
 		)
-	)
+	);
 }
-const BaseOverflowTab = /* @__PURE__ */ _export_sfc(_sfc_main$4, [['render', _sfc_render$1]])
-const _sfc_main$3 = {}
+const BaseOverflowTab = /* @__PURE__ */ _export_sfc(_sfc_main$4, [['render', _sfc_render$1]]);
+const _sfc_main$3 = {};
 const _hoisted_1$2 = {
 	class:
 		'histoire-base-tag htw-text-center htw-text-xs htw-mx-1 htw-px-0.5 htw-h-4 htw-uppercase htw-min-w-4 htw-rounded-full htw-bg-primary-500 htw-text-white dark:htw-text-black'
-}
+};
 function _sfc_render(_ctx, _cache) {
-	return openBlock(), createElementBlock('span', _hoisted_1$2, [renderSlot(_ctx.$slots, 'default')])
+	return (
+		openBlock(), createElementBlock('span', _hoisted_1$2, [renderSlot(_ctx.$slots, 'default')])
+	);
 }
-const BaseTag = /* @__PURE__ */ _export_sfc(_sfc_main$3, [['render', _sfc_render]])
+const BaseTag = /* @__PURE__ */ _export_sfc(_sfc_main$3, [['render', _sfc_render]]);
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
 	__name: 'PaneTabs',
 	props: {
@@ -3675,11 +3679,11 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
 		variant: null
 	},
 	setup(__props) {
-		const props = __props
-		const { story } = toRefs(props)
-		const { renderedDoc } = useStoryDoc(story)
-		const eventsStore = useEventsStore()
-		const hasEvents = computed(() => eventsStore.events.length)
+		const props = __props;
+		const { story } = toRefs(props);
+		const { renderedDoc } = useStoryDoc(story);
+		const eventsStore = useEventsStore();
+		const hasEvents = computed(() => eventsStore.events.length);
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -3831,28 +3835,28 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
 						_: 1
 					}
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const _hoisted_1$1 = /* @__PURE__ */ createBaseVNode('span', null, 'Select a variant', -1)
-const _hoisted_2$1 = /* @__PURE__ */ createBaseVNode('span', null, 'Loading...', -1)
-const _hoisted_3 = { class: 'htw-flex htw-flex-col htw-h-full' }
+});
+const _hoisted_1$1 = /* @__PURE__ */ createBaseVNode('span', null, 'Select a variant', -1);
+const _hoisted_2$1 = /* @__PURE__ */ createBaseVNode('span', null, 'Loading...', -1);
+const _hoisted_3 = { class: 'htw-flex htw-flex-col htw-h-full' };
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 	__name: 'StorySidePanel',
 	setup(__props) {
-		const storyStore = useStoryStore()
-		const route = useRoute()
+		const storyStore = useStoryStore();
+		const route = useRoute();
 		const panelContentComponent = computed(() => {
 			switch (route.query.tab) {
 				case 'docs':
-					return _sfc_main$a
+					return _sfc_main$a;
 				case 'events':
-					return _sfc_main$8
+					return _sfc_main$8;
 				default:
-					return _sfc_main$b
+					return _sfc_main$b;
 			}
-		})
+		});
 		return (_ctx, _cache) => {
 			return !unref(storyStore).currentVariant
 				? (openBlock(),
@@ -3933,53 +3937,53 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 							]),
 							_: 1
 						}
-				  ))
-		}
+				  ));
+		};
 	}
-})
+});
 const _hoisted_1 = {
 	key: 1,
 	class: 'histoire-story-view histoire-with-story htw-h-full'
-}
+};
 const _hoisted_2 = {
 	key: 0,
 	class: 'htw-h-full htw-overflow-auto'
-}
+};
 const _sfc_main = /* @__PURE__ */ defineComponent({
 	__name: 'StoryView',
 	setup(__props) {
-		const storyStore = useStoryStore()
-		const router = useRouter()
-		const route = useRoute()
+		const storyStore = useStoryStore();
+		const router = useRouter();
+		const route = useRoute();
 		watch(
 			() => storyStore.currentVariant,
 			(value) => {
 				if (value) {
-					storyStore.currentStory.lastSelectedVariant = value
+					storyStore.currentStory.lastSelectedVariant = value;
 				}
 			},
 			{
 				immediate: true
 			}
-		)
+		);
 		watch(
 			() => [storyStore.currentStory, storyStore.currentVariant],
 			() => {
-				var _a, _b
+				var _a, _b;
 				if (!storyStore.currentVariant) {
 					if ((_a = storyStore.currentStory) == null ? void 0 : _a.lastSelectedVariant) {
-						setVariant(storyStore.currentStory.lastSelectedVariant.id)
-						return
+						setVariant(storyStore.currentStory.lastSelectedVariant.id);
+						return;
 					}
 					if (((_b = storyStore.currentStory) == null ? void 0 : _b.variants.length) === 1) {
-						setVariant(storyStore.currentStory.variants[0].id)
+						setVariant(storyStore.currentStory.variants[0].id);
 					}
 				}
 			},
 			{
 				immediate: true
 			}
-		)
+		);
 		function setVariant(variantId) {
 			router.replace({
 				...route,
@@ -3987,7 +3991,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 					...route.query,
 					variantId
 				}
-			})
+			});
 		}
 		return (_ctx, _cache) => {
 			return !unref(storyStore).currentStory
@@ -4044,8 +4048,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 										_: 1
 									}
 							  ))
-				  ]))
-		}
+				  ]));
+		};
 	}
-})
-export { _sfc_main as default }
+});
+export { _sfc_main as default };

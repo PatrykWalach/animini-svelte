@@ -1,1 +1,1 @@
-import './src/routes/styles.css'
+import './src/routes/styles.css';

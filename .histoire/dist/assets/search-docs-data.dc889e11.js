@@ -1,4 +1,4 @@
-import { ar as markRaw } from './vendor.ebc1f38e.js'
+import { ar as markRaw } from './vendor.ebc1f38e.js';
 let searchData$1 = {
 	index: {
 		reg: '{}',
@@ -7,7 +7,7 @@ let searchData$1 = {
 		'text.ctx': '[{}]'
 	},
 	idMap: {}
-}
-const searchData = markRaw(searchData$1)
+};
+const searchData = markRaw(searchData$1);
 function onUpdate(cb) {}
-export { onUpdate, searchData }
+export { onUpdate, searchData };

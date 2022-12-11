@@ -1,4 +1,4 @@
-import { _ as __vitePreload } from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js'
+import { _ as __vitePreload } from './GenericMountStory.vue_vue_type_script_setup_true_lang.c15759ab.js';
 import {
 	d as defineComponent,
 	u as useCssVars,
@@ -29,15 +29,15 @@ import {
 	e as withKeys,
 	D as withModifiers,
 	aW as flexsearch_bundle
-} from './vendor.ebc1f38e.js'
+} from './vendor.ebc1f38e.js';
 import {
 	u as useScrollOnActive,
 	o as onKeyboardShortcut,
 	B as BaseListItemLink,
 	_ as _export_sfc,
 	a as useStoryStore
-} from './bundle-main.0f374b94.js'
-import { B as BaseEmpty } from './BaseEmpty.041cdabb.js'
+} from './bundle-main.0f374b94.js';
+import { B as BaseEmpty } from './BaseEmpty.041cdabb.js';
 function pipeline(a, b, c, d) {
 	if (
 		a &&
@@ -47,37 +47,37 @@ function pipeline(a, b, c, d) {
 		d && 1 < a.length && (a = collapse(a)),
 		c || '' === c)
 	) {
-		const b2 = a.split(c)
-		return this.filter ? filter$1(b2, this.filter) : b2
+		const b2 = a.split(c);
+		return this.filter ? filter$1(b2, this.filter) : b2;
 	}
-	return a
+	return a;
 }
-const regex_whitespace = /[\p{Z}\p{S}\p{P}\p{C}]+/u
-const regex_normalize = /[\u0300-\u036f]/g
+const regex_whitespace = /[\p{Z}\p{S}\p{P}\p{C}]+/u;
+const regex_normalize = /[\u0300-\u036f]/g;
 function normalize(a) {
-	return a.normalize && (a = a.normalize('NFD').replace(regex_normalize, '')), a
+	return a.normalize && (a = a.normalize('NFD').replace(regex_normalize, '')), a;
 }
 function replace(a, b) {
 	for (let c = 0, d = b.length; c < d && ((a = a.replace(b[c], b[c + 1])), !!a); c += 2);
-	return a
+	return a;
 }
 function regex(a) {
-	return new RegExp(a, 'g')
+	return new RegExp(a, 'g');
 }
 function collapse(a) {
 	let b = '',
-		c = ''
-	for (let d, e = 0, f = a.length; e < f; e++) (d = a[e]) !== c && (b += c = d)
-	return b
+		c = '';
+	for (let d, e = 0, f = a.length; e < f; e++) (d = a[e]) !== c && (b += c = d);
+	return b;
 }
 function filter$1(a, b) {
 	const c = a.length,
-		d = []
+		d = [];
 	for (let e = 0, f = 0; e < c; e++) {
-		const c2 = a[e]
-		c2 && !b[c2] && (d[f++] = c2)
+		const c2 = a[e];
+		c2 && !b[c2] && (d[f++] = c2);
 	}
-	return d
+	return d;
 }
 const regex_a = regex('[\xE0\xE1\xE2\xE3\xE4\xE5]'),
 	regex_e = regex('[\xE8\xE9\xEA\xEB]'),
@@ -110,7 +110,7 @@ const regex_a = regex('[\xE0\xE1\xE2\xE3\xE4\xE5]'),
 		's',
 		regex_and,
 		' and '
-	]
+	];
 function encode$2(a) {
 	return (
 		(a = '' + a),
@@ -121,7 +121,7 @@ function encode$2(a) {
 			regex_whitespace,
 			false
 		)
-	)
+	);
 }
 const regex_strip = /[^a-z0-9]+/,
 	soundex = {
@@ -140,29 +140,29 @@ const regex_strip = /[^a-z0-9]+/,
 		i: 'e',
 		y: 'e',
 		u: 'o'
-	}
+	};
 function encode$1(a) {
-	a = encode$2.call(this, a).join(' ')
-	const b = []
+	a = encode$2.call(this, a).join(' ');
+	const b = [];
 	if (a) {
 		const c = a.split(regex_strip),
-			d = c.length
+			d = c.length;
 		for (let e, f = 0, g = 0; f < d; f++)
 			if ((a = c[f]) && (!this.filter || !this.filter[a])) {
-				e = a[0]
+				e = a[0];
 				let c2 = soundex[e] || e,
-					d2 = c2
+					d2 = c2;
 				for (let b2 = 1; b2 < a.length; b2++) {
-					e = a[b2]
-					const f2 = soundex[e] || e
-					f2 && f2 !== d2 && ((c2 += f2), (d2 = f2))
+					e = a[b2];
+					const f2 = soundex[e] || e;
+					f2 && f2 !== d2 && ((c2 += f2), (d2 = f2));
 				}
-				b[g++] = c2
+				b[g++] = c2;
 			}
 	}
-	return b
+	return b;
 }
-const charset = { encode, rtl: false, tokenize: '' }
+const charset = { encode, rtl: false, tokenize: '' };
 const regex_ae = regex('ae'),
 	regex_oe = regex('oe'),
 	regex_sh = regex('sh'),
@@ -186,7 +186,7 @@ const regex_ae = regex('ae'),
 		'',
 		regex('(?!^[aeo])h(?!^[aeo])'),
 		''
-	]
+	];
 function encode(a, b) {
 	return (
 		a &&
@@ -194,7 +194,7 @@ function encode(a, b) {
 			2 < a.length && (a = replace(a, pairs)),
 			!b && (1 < a.length && (a = collapse(a)), a && (a = a.split(' ')))),
 		a
-	)
+	);
 }
 const filter = [
 	'a',
@@ -386,7 +386,7 @@ const filter = [
 	'yourself',
 	'yourselves',
 	"you've"
-]
+];
 const stemmer = {
 	ational: 'ate',
 	iveness: 'ive',
@@ -434,17 +434,17 @@ const stemmer = {
 	ou: '',
 	er: '',
 	ic: ''
-}
-const matcher = {}
-const language = { filter, stemmer, matcher }
-const _hoisted_1$1 = ['data-selected']
-const _hoisted_2 = { class: 'htw-flex-1' }
-const _hoisted_3 = { class: 'htw-flex' }
-const _hoisted_4 = { class: 'htw-ml-auto htw-opacity-40' }
+};
+const matcher = {};
+const language = { filter, stemmer, matcher };
+const _hoisted_1$1 = ['data-selected'];
+const _hoisted_2 = { class: 'htw-flex-1' };
+const _hoisted_3 = { class: 'htw-flex' };
+const _hoisted_4 = { class: 'htw-ml-auto htw-opacity-40' };
 const _hoisted_5 = {
 	key: 0,
 	class: 'htw-flex htw-items-center htw-gap-0.5 htw-opacity-60'
-}
+};
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 	__name: 'SearchItem',
 	props: {
@@ -461,27 +461,27 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 		close: () => true
 	},
 	setup(__props, { emit }) {
-		const props = __props
+		const props = __props;
 		useCssVars((_ctx) => ({
 			beebbd52: __props.result.iconColor
-		}))
-		const el = ref()
-		const { selected } = toRefs(props)
-		useScrollOnActive(selected, el)
-		const router = useRouter()
+		}));
+		const el = ref();
+		const { selected } = toRefs(props);
+		useScrollOnActive(selected, el);
+		const router = useRouter();
 		onKeyboardShortcut(['enter'], () => {
-			if (!props.selected) return
-			router.push(props.result.route)
-			emit('close')
-		})
+			if (!props.selected) return;
+			router.push(props.result.route);
+			emit('close');
+		});
 		const defaultIcons = {
 			story: 'carbon:cube',
 			variant: 'carbon:cube'
-		}
+		};
 		const kindLabels = {
 			story: 'Story',
 			variant: 'Variant'
-		}
+		};
 		return (_ctx, _cache) => {
 			return (
 				openBlock(),
@@ -505,7 +505,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 							},
 							{
 								default: withCtx(() => {
-									var _a, _b
+									var _a, _b;
 									return [
 										createVNode(
 											unref(Icon),
@@ -572,14 +572,14 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 																			createBaseVNode('span', null, toDisplayString(p), 1)
 																		]
 																	)
-																)
+																);
 															}),
 															128
 														))
 												  ]))
 												: createCommentVNode('', true)
 										])
-									]
+									];
 								}),
 								_: 1
 							},
@@ -590,11 +590,11 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
 					8,
 					_hoisted_1$1
 				)
-			)
-		}
+			);
+		};
 	}
-})
-const SearchItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [['__scopeId', 'data-v-d95fcb03']])
+});
+const SearchItem = /* @__PURE__ */ _export_sfc(_sfc_main$1, [['__scopeId', 'data-v-d95fcb03']]);
 let searchData$1 = {
 	index: {
 		reg: '{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":1,"11":1,"12":1,"13":1,"14":1,"15":1,"16":1,"17":1,"18":1,"19":1}',
@@ -625,12 +625,12 @@ let searchData$1 = {
 		18: { id: 'tailwind:height', kind: 'variant' },
 		19: { id: 'tailwind:full-config', kind: 'variant' }
 	}
-}
-const searchData = markRaw(searchData$1)
+};
+const searchData = markRaw(searchData$1);
 const _hoisted_1 = {
 	key: 1,
 	class: 'htw-max-h-[400px] htw-overflow-y-auto htw-rounded-b-lg'
-}
+};
 const _sfc_main = /* @__PURE__ */ defineComponent({
 	__name: 'SearchPane',
 	props: {
@@ -643,35 +643,35 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 		close: () => true
 	},
 	setup(__props, { emit }) {
-		const props = __props
+		const props = __props;
 		const DocSearchData = () =>
 			__vitePreload(
 				() => import('./search-docs-data.dc889e11.js'),
 				true ? ['assets/search-docs-data.dc889e11.js', 'assets/vendor.ebc1f38e.js'] : void 0
-			)
+			);
 		function close() {
-			emit('close')
+			emit('close');
 		}
-		const input = ref()
+		const input = ref();
 		const { focused } = useFocus(input, {
 			initialValue: true
-		})
+		});
 		watch(
 			() => props.shown,
 			(value) => {
 				if (value) {
 					requestAnimationFrame(() => {
-						focused.value = true
-						input.value.select()
-					})
+						focused.value = true;
+						input.value.select();
+					});
 				}
 			}
-		)
-		const searchInputText = ref('')
-		const rateLimitedSearch = refDebounced(searchInputText, 50)
-		const storyStore = useStoryStore()
-		let titleSearchIndex
-		let titleIdMap
+		);
+		const searchInputText = ref('');
+		const rateLimitedSearch = refDebounced(searchInputText, 50);
+		const storyStore = useStoryStore();
+		let titleSearchIndex;
+		let titleIdMap;
 		function createIndex() {
 			return new flexsearch_bundle.exports.Document({
 				preset: 'match',
@@ -683,87 +683,87 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 				charset,
 				language,
 				tokenize: 'forward'
-			})
+			});
 		}
 		async function loadSearchIndex(data) {
-			titleSearchIndex = createIndex()
+			titleSearchIndex = createIndex();
 			for (const key of Object.keys(data.index)) {
-				await titleSearchIndex.import(key, data.index[key])
+				await titleSearchIndex.import(key, data.index[key]);
 			}
-			titleIdMap = data.idMap
+			titleIdMap = data.idMap;
 		}
-		loadSearchIndex(searchData)
-		let docSearchIndex
-		let docIdMap
+		loadSearchIndex(searchData);
+		let docSearchIndex;
+		let docIdMap;
 		async function loadDocSearchIndex() {
 			async function load(data) {
-				docSearchIndex = createIndex()
+				docSearchIndex = createIndex();
 				for (const key of Object.keys(data.index)) {
-					await docSearchIndex.import(key, data.index[key])
+					await docSearchIndex.import(key, data.index[key]);
 				}
-				docIdMap = data.idMap
+				docIdMap = data.idMap;
 				if (rateLimitedSearch.value) {
-					searchOnDocField(rateLimitedSearch.value)
+					searchOnDocField(rateLimitedSearch.value);
 				}
 			}
-			const searchDataModule = await DocSearchData()
-			load(searchDataModule.searchData)
+			const searchDataModule = await DocSearchData();
+			load(searchDataModule.searchData);
 			searchDataModule.onUpdate((searchData2) => {
-				load(searchData2)
-			})
+				load(searchData2);
+			});
 		}
-		loadDocSearchIndex()
-		const titleResults = ref([])
+		loadDocSearchIndex();
+		const titleResults = ref([]);
 		watch(rateLimitedSearch, async (value) => {
-			const list = []
-			const raw = await titleSearchIndex.search(value)
-			let rank = 0
+			const list = [];
+			const raw = await titleSearchIndex.search(value);
+			let rank = 0;
 			for (const field of raw) {
 				for (const id of field.result) {
-					const idMapData = titleIdMap[id]
-					if (!idMapData) continue
+					const idMapData = titleIdMap[id];
+					if (!idMapData) continue;
 					switch (idMapData.kind) {
 						case 'story': {
-							list.push(storyResultFactory(storyStore.getStoryById(idMapData.id), rank))
-							rank++
-							break
+							list.push(storyResultFactory(storyStore.getStoryById(idMapData.id), rank));
+							rank++;
+							break;
 						}
 						case 'variant': {
-							const [storyId] = idMapData.id.split(':')
-							const story = storyStore.getStoryById(storyId)
-							const variant = storyStore.getVariantById(idMapData.id)
-							list.push(variantResultFactory(story, variant, rank))
-							rank++
-							break
+							const [storyId] = idMapData.id.split(':');
+							const story = storyStore.getStoryById(storyId);
+							const variant = storyStore.getVariantById(idMapData.id);
+							list.push(variantResultFactory(story, variant, rank));
+							rank++;
+							break;
 						}
 					}
 				}
 			}
-			titleResults.value = list
-		})
-		const docsResults = ref([])
+			titleResults.value = list;
+		});
+		const docsResults = ref([]);
 		async function searchOnDocField(query) {
 			if (docSearchIndex) {
-				const list = []
-				const raw = await docSearchIndex.search(query)
-				let rank = 0
+				const list = [];
+				const raw = await docSearchIndex.search(query);
+				let rank = 0;
 				for (const field of raw) {
 					for (const id of field.result) {
-						const idMapData = docIdMap[id]
-						if (!idMapData) continue
+						const idMapData = docIdMap[id];
+						if (!idMapData) continue;
 						switch (idMapData.kind) {
 							case 'story': {
-								list.push(storyResultFactory(storyStore.getStoryById(idMapData.id), rank, 'docs'))
-								rank++
-								break
+								list.push(storyResultFactory(storyStore.getStoryById(idMapData.id), rank, 'docs'));
+								rank++;
+								break;
 							}
 						}
 					}
 				}
-				docsResults.value = list
+				docsResults.value = list;
 			}
 		}
-		watch(rateLimitedSearch, searchOnDocField)
+		watch(rateLimitedSearch, searchOnDocField);
 		function storyResultFactory(story, rank, type = 'title') {
 			return {
 				kind: 'story',
@@ -783,10 +783,10 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 				icon: story.icon,
 				iconColor: story.iconColor,
 				type
-			}
+			};
 		}
 		function variantResultFactory(story, variant, rank, type = 'title') {
-			var _a
+			var _a;
 			return {
 				kind: 'variant',
 				rank,
@@ -806,35 +806,35 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 				icon: variant.icon,
 				iconColor: variant.iconColor,
 				type
-			}
+			};
 		}
 		const results = computed(() => {
-			const list = [...titleResults.value]
-			const seen = {}
+			const list = [...titleResults.value];
+			const seen = {};
 			for (const r of titleResults.value) {
-				seen[r.id] = true
+				seen[r.id] = true;
 			}
 			for (const r of docsResults.value) {
 				if (!seen[r.id]) {
-					list.push(r)
+					list.push(r);
 				}
 			}
-			return list
-		})
-		const selectedIndex = ref(0)
+			return list;
+		});
+		const selectedIndex = ref(0);
 		watch(results, () => {
-			selectedIndex.value = 0
-		})
+			selectedIndex.value = 0;
+		});
 		function selectNext() {
-			selectedIndex.value++
+			selectedIndex.value++;
 			if (selectedIndex.value > results.value.length - 1) {
-				selectedIndex.value = 0
+				selectedIndex.value = 0;
 			}
 		}
 		function selectPrevious() {
-			selectedIndex.value--
+			selectedIndex.value--;
 			if (selectedIndex.value < 0) {
-				selectedIndex.value = results.value.length - 1
+				selectedIndex.value = results.value.length - 1;
 			}
 		}
 		return (_ctx, _cache) => {
@@ -923,7 +923,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 													8,
 													['result', 'selected']
 												)
-											)
+											);
 										}),
 										128
 									))
@@ -932,8 +932,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
 					],
 					64
 				)
-			)
-		}
+			);
+		};
 	}
-})
-export { _sfc_main as default }
+});
+export { _sfc_main as default };
