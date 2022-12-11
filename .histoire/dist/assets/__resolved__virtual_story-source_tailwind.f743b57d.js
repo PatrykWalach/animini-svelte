@@ -7356,7 +7356,5 @@ export default {
       onMount: (api) => mountApp(api, () => h('pre', JSON.stringify(config, null, 2))),
     },
   ],
-}`;
-export {
-  __resolved__virtual_storySource_tailwind as default
-};
+}`
+export { __resolved__virtual_storySource_tailwind as default }

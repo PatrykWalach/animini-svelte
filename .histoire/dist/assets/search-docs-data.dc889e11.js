@@ -1,9 +1,13 @@
-import { ar as markRaw } from "./vendor.ebc1f38e.js";
-let searchData$1 = { "index": { "reg": "{}", "text.cfg": '{"doc":0,"opt":1}', "text.map": "[{},{},{},{},{},{},{},{},{}]", "text.ctx": "[{}]" }, "idMap": {} };
-const searchData = markRaw(searchData$1);
-function onUpdate(cb) {
+import { ar as markRaw } from './vendor.ebc1f38e.js'
+let searchData$1 = {
+	index: {
+		reg: '{}',
+		'text.cfg': '{"doc":0,"opt":1}',
+		'text.map': '[{},{},{},{},{},{},{},{},{}]',
+		'text.ctx': '[{}]'
+	},
+	idMap: {}
 }
-export {
-  onUpdate,
-  searchData
-};
+const searchData = markRaw(searchData$1)
+function onUpdate(cb) {}
+export { onUpdate, searchData }
