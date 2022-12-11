@@ -20588,7 +20588,7 @@ var x$1 = {
 	ie: Cn,
 	ie_version: ml ? ds.documentMode || 6 : gs ? +gs[1] : ps ? +ps[1] : 0,
 	gecko: Sr,
-	gecko_version: Sr ? +/* @__PURE__ */ (/Firefox\/(\d+)/.exec(kt.userAgent) || [0, 0])[1] : 0,
+	gecko_version: Sr ? +(/* @__PURE__ */ (/Firefox\/(\d+)/.exec(kt.userAgent) || [0, 0])[1]) : 0,
 	chrome: !!Vn,
 	chrome_version: Vn ? +Vn[1] : 0,
 	ios: Ar,
@@ -20596,7 +20596,7 @@ var x$1 = {
 	webkit: Cr,
 	safari: wl,
 	webkit_version: Cr
-		? +/* @__PURE__ */ (/\bAppleWebKit\/(\d+)/.exec(navigator.userAgent) || [0, 0])[1]
+		? +(/* @__PURE__ */ (/\bAppleWebKit\/(\d+)/.exec(navigator.userAgent) || [0, 0])[1])
 		: 0,
 	tabSize: ds.documentElement.style.tabSize != null ? 'tab-size' : '-moz-tab-size'
 }
