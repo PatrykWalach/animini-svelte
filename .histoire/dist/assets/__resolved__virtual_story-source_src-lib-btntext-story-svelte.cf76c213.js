@@ -18,6 +18,4 @@ const __resolved__virtual_storySource_srcLibBtntextStorySvelte = `<script lang="
     </BtnText> \r
   </Hst.Variant>\r
 </Hst.Story>`;
-export {
-  __resolved__virtual_storySource_srcLibBtntextStorySvelte as default
-};
+export { __resolved__virtual_storySource_srcLibBtntextStorySvelte as default };

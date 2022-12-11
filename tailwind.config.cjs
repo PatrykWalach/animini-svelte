@@ -1,13 +1,13 @@
-const plugin = require('tailwindcss/plugin')
-const withAlphaVariable = require('tailwindcss/lib/util/withAlphaVariable').default
-const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default
-const createUtilityPlugin = require('tailwindcss/lib/util/createUtilityPlugin').default
+const plugin = require('tailwindcss/plugin');
+const withAlphaVariable = require('tailwindcss/lib/util/withAlphaVariable').default;
+const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette').default;
+const createUtilityPlugin = require('tailwindcss/lib/util/createUtilityPlugin').default;
 
-const config = require('./tailwind.config.json')
+const config = require('./tailwind.config.json');
 
-const themeDark = require('./src/lib/theme-dark.json')
-const themeLight = require('./src/lib/theme-light.json')
-const defaultTheme = require('tailwindcss/defaultTheme')
+const themeDark = require('./src/lib/theme-dark.json');
+const themeLight = require('./src/lib/theme-light.json');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 /**
  * @type {import('tailwindcss').Config}
@@ -47,9 +47,9 @@ module.exports = {
 				'@media (prefers-color-scheme: dark)': {
 					':root': themeDark
 				}
-			})
+			});
 
-			addVariant('pointer', '@media(pointer:fine)')
+			addVariant('pointer', '@media(pointer:fine)');
 
 			// 'space-x':
 
@@ -64,7 +64,7 @@ module.exports = {
 					})
 				},
 				{ values: theme('space') }
-			)
+			);
 
 			matchUtilities(
 				{
@@ -76,7 +76,7 @@ module.exports = {
 								'-webkit-box-orient': 'vertical'
 							}),
 							'-webkit-line-clamp': String(value)
-						}
+						};
 					}
 				},
 				{
@@ -86,10 +86,10 @@ module.exports = {
 					},
 					type: ['number']
 				}
-			)
+			);
 
 			const backgroundImage =
-				'linear-gradient(rgb(var(--surface-tint) / var(--mdi-elevation-opacity)), rgb(var(--surface-tint) / var(--mdi-elevation-opacity))), linear-gradient(var(--mdi-state-color), var(--mdi-state-color))'
+				'linear-gradient(rgb(var(--surface-tint) / var(--mdi-elevation-opacity)), rgb(var(--surface-tint) / var(--mdi-elevation-opacity))), linear-gradient(var(--mdi-state-color), var(--mdi-state-color))';
 
 			addUtilities({
 				'.surface': {
@@ -97,35 +97,35 @@ module.exports = {
 					'--mdi-state-color': 'transparent',
 					backgroundImage
 				}
-			})
+			});
 
 			matchUtilities(
 				{
 					elevation(opacity) {
 						return {
 							'--mdi-elevation-opacity': opacity
-						}
+						};
 					}
 				},
 				{
 					values: theme('elevation'),
 					type: ['percentage']
 				}
-			)
+			);
 
 			matchUtilities(
 				{
 					state(opacity) {
 						return {
 							'--mdi-state-opacity': opacity
-						}
+						};
 					}
 				},
 				{
 					values: theme('state'),
 					type: ['percentage']
 				}
-			)
+			);
 
 			matchUtilities(
 				{
@@ -137,14 +137,14 @@ module.exports = {
 								variable: '--mdi-state-opacity'
 							}),
 							'--mdi-state-opacity': 0
-						}
+						};
 					}
 				},
 				{
 					values: flattenColorPalette(theme('colors')),
 					type: ['color', 'any']
 				}
-			)
+			);
 
 			addBase({
 				'.i': {
@@ -162,21 +162,21 @@ module.exports = {
 						'--mdi-symbol-grade': '-25'
 					}
 				}
-			})
+			});
 
 			matchUtilities(
 				{
 					'i-grade'(grade) {
 						return {
 							'--mdi-symbol-grade': String(grade)
-						}
+						};
 					}
 				},
 				{
 					values: { '-25': -25, 0: 0, 200: 200 },
 					type: ['number']
 				}
-			)
+			);
 
 			matchUtilities(
 				{
@@ -184,48 +184,48 @@ module.exports = {
 						return {
 							'--mdi-symbol-optical-size': String(size),
 							fontSize: Number(size) / 16 + 'rem'
-						}
+						};
 					}
 				},
 				{
 					values: { 20: '20', 24: '24', 40: '40', 48: '48' }
 					// type: ['absolute-size']
 				}
-			)
+			);
 
 			matchUtilities(
 				{
 					'i-fill'(fill) {
 						return {
 							'--mdi-symbol-fill': String(fill)
-						}
+						};
 					}
 				},
 				{
 					values: { none: '0', DEFAULT: '1' }
 				}
-			)
+			);
 
 			matchUtilities(
 				{
 					'i-weight'(weight) {
 						return {
 							'--mdi-symbol-weight': String(weight)
-						}
+						};
 					}
 				},
 				{
 					values: { 100: 100, 200: 200, 300: 300, 400: 400, 500: 500, 600: 600, 700: 700 }
 				}
-			)
+			);
 
-			createUtilityPlugin('maxWidth', [['max-w', ['maxInlineSize']]])({ matchUtilities, theme })
-			createUtilityPlugin('minWidth', [['min-w', ['minInlineSize']]])({ matchUtilities, theme })
-			createUtilityPlugin('width', [['w', ['inlineSize']]])({ matchUtilities, theme })
+			createUtilityPlugin('maxWidth', [['max-w', ['maxInlineSize']]])({ matchUtilities, theme });
+			createUtilityPlugin('minWidth', [['min-w', ['minInlineSize']]])({ matchUtilities, theme });
+			createUtilityPlugin('width', [['w', ['inlineSize']]])({ matchUtilities, theme });
 
-			createUtilityPlugin('maxHeight', [['max-h', ['maxBlockSize']]])({ matchUtilities, theme })
-			createUtilityPlugin('minHeight', [['min-h', ['minBlockSize']]])({ matchUtilities, theme })
-			createUtilityPlugin('height', [['h', ['blockSize']]])({ matchUtilities, theme })
+			createUtilityPlugin('maxHeight', [['max-h', ['maxBlockSize']]])({ matchUtilities, theme });
+			createUtilityPlugin('minHeight', [['min-h', ['minBlockSize']]])({ matchUtilities, theme });
+			createUtilityPlugin('height', [['h', ['blockSize']]])({ matchUtilities, theme });
 
 			matchUtilities(
 				{
@@ -241,7 +241,7 @@ module.exports = {
 					values: theme('margin'),
 					supportsNegativeValues: true
 				}
-			)
+			);
 
 			matchUtilities(
 				{
@@ -256,7 +256,7 @@ module.exports = {
 				{
 					values: theme('padding')
 				}
-			)
+			);
 		})
 	]
-}
+};

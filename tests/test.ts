@@ -1,8 +1,5 @@
 import { test } from '@playwright/test';
 
-
-
-
 import { expect } from '@playwright/test';
 
 test('about page has expected h1', async ({ page }) => {

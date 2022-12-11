@@ -3,7 +3,7 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 
-	createCache()
+	createCache();
 </script>
 
 <div class="app">
