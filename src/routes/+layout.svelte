@@ -1,6 +1,9 @@
 <script>
+	import { createCache } from '$lib/cache';
 	import Header from './Header.svelte';
 	import './styles.css';
+
+	createCache()
 </script>
 
 <div class="app">

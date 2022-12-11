@@ -43,5 +43,9 @@
 		"vite": "^3.1.0",
 		"vitest": "^0.23.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@apollo/client": "^3.7.2",
+		"graphql": "^16.6.0"
+	}
 }
