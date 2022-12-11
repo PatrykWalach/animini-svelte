@@ -17,7 +17,5 @@ const __resolved__virtual_storySource_srcLibBtntextStorySvelte = `<script lang="
       Enabled\r
     </BtnText> \r
   </Hst.Variant>\r
-</Hst.Story>`;
-export {
-  __resolved__virtual_storySource_srcLibBtntextStorySvelte as default
-};
+</Hst.Story>`
+export { __resolved__virtual_storySource_srcLibBtntextStorySvelte as default }
