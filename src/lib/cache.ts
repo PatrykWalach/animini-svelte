@@ -44,9 +44,8 @@ export class InMemoryStore {
 					...watch,
 					immediate: true,
 					callback({ result }) {
-						console.log(result);
 						run(result);
-					}
+					},
 				});
 			}
 		};
@@ -64,14 +63,27 @@ const typePolicies: StrictTypedTypePolicies = {};
 
 
 export function createCache() {
-	setContext(
-		KEY,
-		new InMemoryStore(
-			new InMemoryCache({
-				typePolicies: {}
-			})
-		)
-	);
+	const cache = new InMemoryCache({
+		typePolicies
+		,
+
+	});
+
+	if(typeof document !== 'undefined'){
+		try{
+			cache.restore(JSON.parse(localStorage.getItem("apollo-cache") ?? '{}'))
+		}catch (e){
+			// 
+		}
+		/** @TODO: serialize cache */ 
+		// cache.extract()
+	}
+
+
+
+	
+
+	setContext(KEY, new InMemoryStore(cache));
 }
 
 export function getCache(): InMemoryStore {
