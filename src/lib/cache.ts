@@ -60,9 +60,6 @@ const KEY = Symbol();
 
 const typePolicies: StrictTypedTypePolicies = {};
 
-
-
-
 export function createCache() {
 	setContext(
 		KEY,
