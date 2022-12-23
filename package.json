@@ -5,17 +5,23 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"generate": "cross-env NODE_OPTIONS=\"--loader ts-node/register\" graphql-codegen",
-		"prepare": "npm run generate",
+		"prepare": "husky install && npm run generate",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"lint": "prettier --ignore-path .gitignore --plugin-search-dir . --check . && eslint --ignore-path .gitignore .",
+		"format": "prettier --ignore-path .gitignore --plugin-search-dir . --write .",
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview"
+	},
+	"lint-staged": {
+		"*{(c|m)?(j|t)s,svelte,css,scss,postcss,md,json}": [
+			"prettier --plugin-search-dir . --write",
+			"eslint"
+		]
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
@@ -38,6 +44,8 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"histoire": "^0.11.7",
+		"husky": "^8.0.2",
+		"lint-staged": "^13.1.0",
 		"postcss": "^8.4.19",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
