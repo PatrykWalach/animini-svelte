@@ -1,0 +1,33 @@
+{
+	"schema": "./schema.graphql",
+	"documents": "./src/**/*.{ts,tsx,svelte}",
+	"extensions": {
+		"codegen": {
+			"emitLegacyCommonJSImports": false,
+			"config": {
+				"skipDocumentsValidation": true,
+				"useTypeImports": true,
+				"immutableTypes": true
+			},
+			"generates": {
+				"./src/lib/gql/": {
+					"preset": "./preset.cjs",
+					"presetConfig": {
+						"unmaskFunctionName": "useFragment",
+						"fragmentMasking": true
+					},
+					"plugins": ["./fragments.cjs"]
+				},
+				"./src/lib/gql/helpers.ts": {
+					"plugins": ["typescript-apollo-client-helpers"]
+				},
+				"./src/lib/gql/schema.json": {
+					"plugins": ["introspection"],
+					"config": {
+						"minify": true
+					}
+				}
+			}
+		}
+	}
+}
