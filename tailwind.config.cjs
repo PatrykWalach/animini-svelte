@@ -23,8 +23,11 @@ module.exports = {
 					config.colors.map((color) => [color, `rgb(var(--${color}) / <alpha-value>)`])
 				)
 			}
-		}
+		},
+		
 	},
+
+
 	corePlugins: {
 		padding: false,
 		margin: false,
@@ -37,8 +40,9 @@ module.exports = {
 		space: false
 	},
 	plugins: [
+
 		// require('@tailwindcss/container-queries'),
-		plugin(({ matchUtilities, theme, addVariant, addBase, addUtilities }) => {
+		plugin(({ matchUtilities, theme, addVariant, addBase, addUtilities,addComponents }) => {
 			addBase({
 				':root': {
 					fontSize: '16px',
@@ -48,6 +52,12 @@ module.exports = {
 					':root': themeDark
 				}
 			});
+
+			addComponents({
+				'.btn': {
+					'@apply relative flex items-center justify-center gap-2 overflow-hidden rounded-[1.25rem] text-label-lg text-primary surface state-primary min-w-[3rem] h-10 px-3 hover:state-hover focus:state-focus disabled:text-on-surface/[.38] disabled:state-none':{}
+				},
+			})
 
 			addVariant('pointer', '@media(pointer:fine)');
 

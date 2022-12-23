@@ -1,5 +1,4 @@
 <script lang="ts">
-	import BtnText from './BtnText.svelte';
 	import type * as H from '@histoire/plugin-svelte';
 
 	export let Hst: H.Hst;
@@ -7,9 +6,18 @@
 
 <Hst.Story title="Text Button" layout={{ type: 'grid', width: '25%' }}>
 	<Hst.Variant title="Enabled">
-		<BtnText>Enabled</BtnText>
+		<button type="submit" class="btn">
+			Enabled
+		</button>
 	</Hst.Variant>
 	<Hst.Variant title="Disabled">
-		<BtnText disabled={true}>Enabled</BtnText>
+		<button type="submit" class="btn" disabled>
+			Disabled
+		</button>
+	</Hst.Variant>
+	<Hst.Variant title="Link">
+		<a href="?" class="btn">
+	 Link 
+		</a>
 	</Hst.Variant>
 </Hst.Story>
