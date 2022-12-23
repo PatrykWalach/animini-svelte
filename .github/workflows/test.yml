@@ -1,0 +1,68 @@
+name: test
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    types: [opened, synchronize]
+  
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+
+    name: Component tests on Node v${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies 📦
+        run: npm ci
+
+      - name: Run E2E tests 🧪
+        run: npm run test
+
+  eslint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+
+    name: Component tests on Node v${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies 📦
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+
+  svelte-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+
+    name: Component tests on Node v${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies 📦
+        run: npm ci
+
+      - name: Svelte Check
+        run: npm run check
