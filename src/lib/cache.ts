@@ -54,8 +54,14 @@ export class InMemoryStore {
 }
 
 import { getContext, setContext } from 'svelte';
+import type { StrictTypedTypePolicies } from './gql/helpers';
 
 const KEY = Symbol();
+
+const typePolicies: StrictTypedTypePolicies = {};
+
+
+
 
 export function createCache() {
 	setContext(

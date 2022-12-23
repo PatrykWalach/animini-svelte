@@ -11,6 +11,12 @@
 		"noImplicitOverride": true,
 		"noUncheckedIndexedAccess": true,
 		"strict": true
+	},
+	"ts-node": {
+		"transpileOnly": true,
+		"compilerOptions": {
+			"preserveValueImports": false
+		}
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
