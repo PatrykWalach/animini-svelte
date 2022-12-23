@@ -6,9 +6,9 @@ const typescriptPlugin = require('@graphql-codegen/typescript');
 const gqlTagPlugin = require('@graphql-codegen/gql-tag-operations');
 const {
 	processSources
-} = require('./node_modules/@graphql-codegen/gql-tag-operations-preset/cjs/process-sources');
+} = require('./node_modules/@graphql-codegen/client-preset/cjs/process-sources');
 const { ClientSideBaseVisitor } = require('@graphql-codegen/visitor-plugin-common');
-const fragmentMaskingPlugin = require('./node_modules/@graphql-codegen/gql-tag-operations-preset/cjs/fragment-masking-plugin');
+const fragmentMaskingPlugin = require('./node_modules/@graphql-codegen/client-preset/cjs/fragment-masking-plugin');
 
 /**
  * @typedef FragmentMaskingConfig
