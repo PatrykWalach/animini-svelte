@@ -68,7 +68,7 @@ export function createCache() {
 		KEY,
 		new InMemoryStore(
 			new InMemoryCache({
-				typePolicies: {}
+				typePolicies
 			})
 		)
 	);
