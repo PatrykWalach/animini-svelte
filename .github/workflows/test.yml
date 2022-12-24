@@ -61,3 +61,5 @@ jobs:
 
       - name: Svelte Check
         run: npm run check
+        env:
+          PUBLIC_ANILIST_GQL_SERVER_URL: '/api/graphql'
