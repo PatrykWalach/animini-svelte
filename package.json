@@ -11,15 +11,16 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
-		"lint": "prettier --ignore-path .gitignore --plugin-search-dir . --check . && eslint --ignore-path .gitignore .",
-		"format": "prettier --ignore-path .gitignore --plugin-search-dir . --write .",
+		"lint": "npm run prettier -- --check . && eslint .",
+		"prettier": "prettier --plugin-search-dir . --cache --cache-strategy content",
+		"format": "npm run prettier -- --write .",
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview"
 	},
 	"lint-staged": {
-		"*{(c|m)?(j|t)s,svelte,css,scss,postcss,md,json}": [
-			"prettier --plugin-search-dir . --write",
+		"*{cjs,mjs,js,cts,mts,ts,svelte,css,scss,postcss,md,json,yml}": [
+			"npm run prettier -- --write",
 			"eslint"
 		]
 	},
