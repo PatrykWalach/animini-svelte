@@ -19,7 +19,7 @@
 		"story:preview": "histoire preview"
 	},
 	"lint-staged": {
-		"*{(c|m)?(j|t)s,svelte,css,scss,postcss,md,json,yml}": [
+		"*{cjs,mjs,js,cts,mts,ts,svelte,css,scss,postcss,md,json,yml}": [
 			"npm run prettier -- --write",
 			"eslint"
 		]
