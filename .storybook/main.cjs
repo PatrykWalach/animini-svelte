@@ -1,4 +1,5 @@
 const path = require('path');
+const { mergeConfig } = require('vite');
 module.exports = {
 	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
@@ -15,5 +16,14 @@ module.exports = {
 	},
 	docs: {
 		autodocs: 'tag'
+	},
+	viteFinal: (config) => {
+		return mergeConfig(config, {
+			resolve: {
+				alias: {
+					$lib: path.resolve(__dirname, '../src/lib')
+				}
+			}
+		});
 	}
 };
