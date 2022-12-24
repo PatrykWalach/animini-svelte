@@ -11,6 +11,13 @@ module.exports = {
 	ignorePatterns: ['*.cjs'],
 	overrides: [
 		{
+			files: ['*.mdx'],
+			extends: 'plugin:mdx/recommended'
+			// rules: {
+			// 	'@typescript-eslint/no-unused-vars': ['off']
+			// }
+		},
+		{
 			files: ['*.svelte'],
 			processor: 'svelte3/svelte3'
 		}

@@ -18,7 +18,7 @@
 		"build-storybook": "storybook build"
 	},
 	"lint-staged": {
-		"*{cjs,mjs,js,cts,mts,ts,svelte,css,scss,postcss,md,json,yml}": [
+		"*{cjs,mjs,js,cts,mts,ts,svelte,css,scss,postcss,md,json,yml,html,mdx}": [
 			"npm run prettier -- --write",
 			"eslint"
 		]
@@ -47,6 +47,7 @@
 		"cross-env": "^7.0.3",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-mdx": "^2.0.5",
 		"eslint-plugin-storybook": "^0.6.8",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"husky": "^8.0.2",
