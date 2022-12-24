@@ -9,7 +9,7 @@
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:watch": "npm run check -- --watch",
 		"test:unit": "vitest",
 		"lint": "npm run prettier -- --check . && eslint .",
 		"prettier": "prettier --plugin-search-dir . --cache --cache-strategy content",
@@ -18,8 +18,10 @@
 		"build-storybook": "storybook build"
 	},
 	"lint-staged": {
-		"*{cjs,mjs,js,cts,mts,ts,svelte,css,scss,postcss,md,json,yml,html,mdx}": [
-			"npm run prettier -- --write",
+		"*": [
+			"npm run prettier -- --write"
+		],
+		"*{cjs,mjs,js,cts,mts,ts,svelte,html,md,mdx}": [
 			"eslint"
 		]
 	},
