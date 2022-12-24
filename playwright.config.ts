@@ -18,12 +18,12 @@ const config: PlaywrightTestConfig = {
 			name: 'progressive enchancment',
 			use: { javaScriptEnabled: false }
 		},
-		{
-			name: 'pwa',
-			use: {
-				offline: true
-			}
-		}
+		// {
+		// 	name: 'pwa',
+		// 	use: {
+		// 		offline: true
+		// 	}
+		// }
 	]
 };
 
