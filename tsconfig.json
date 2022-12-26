@@ -10,7 +10,8 @@
 		"sourceMap": true,
 		"noImplicitOverride": true,
 		"noUncheckedIndexedAccess": true,
-		"strict": true
+		"strict": true,
+		"types": ["vite-plugin-pwa/client", "vite-plugin-pwa/info"]
 	},
 	"ts-node": {
 		"transpileOnly": true,
