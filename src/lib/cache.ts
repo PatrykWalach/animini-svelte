@@ -45,7 +45,7 @@ export class InMemoryStore {
 					immediate: true,
 					callback({ result }) {
 						run(result);
-					},
+					}
 				});
 			}
 		};
@@ -59,29 +59,20 @@ const KEY = Symbol();
 
 const typePolicies: StrictTypedTypePolicies = {};
 
-
-
-
 export function createCache() {
 	const cache = new InMemoryCache({
 		typePolicies
-		,
-
 	});
 
-	if(typeof document !== 'undefined'){
-		try{
-			cache.restore(JSON.parse(localStorage.getItem("apollo-cache") ?? '{}'))
-		}catch (e){
-			// 
+	if (typeof document !== 'undefined') {
+		try {
+			cache.restore(JSON.parse(localStorage.getItem('apollo-cache') ?? '{}'));
+		} catch (e) {
+			//
 		}
-		/** @TODO: serialize cache */ 
-		// cache.extract()
+
+		localStorage.setItem('apollo-cache', JSON.stringify(cache.extract()));
 	}
-
-
-
-	
 
 	setContext(KEY, new InMemoryStore(cache));
 }
