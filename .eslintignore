@@ -8,6 +8,7 @@ node_modules
 !.env.example
 /src/lib/gql
 *.css
+*.html
 *.ico
 *.png
 .prettierignore
