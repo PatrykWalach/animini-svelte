@@ -37,6 +37,33 @@ module.exports = {
 		space: false
 	},
 	plugins: [
+		plugin(({ matchVariant }) => {
+			const { normalize } = require('tailwindcss/lib/util/dataTypes');
+
+			const fn = (_, { modifier }) =>
+				modifier
+					? [`:merge(.peer\\/${modifier})`, ' ~ .peer-group &']
+					: [':merge(.peer)', ' ~ .peer-group &'];
+
+			matchVariant(
+				'peer-group',
+				(value = '', extra) => {
+					let result = normalize(typeof value === 'function' ? value(extra) : value);
+					if (!result.includes('&')) result = '&' + result;
+
+					let [a, b] = fn('', extra);
+					return result.replace(/&(\S+)?/g, (_, pseudo = '') => a + pseudo + b);
+				},
+
+				{
+					values: {
+						hover: '&:hover',
+						focus: '&:focus',
+						'placeholder-shown': '&:placeholder-shown'
+					}
+				}
+			);
+		}),
 		// require('@tailwindcss/container-queries'),
 		plugin(({ matchUtilities, theme, addVariant, addBase, addUtilities }) => {
 			addBase({
