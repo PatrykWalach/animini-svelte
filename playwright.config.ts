@@ -19,10 +19,10 @@ const config: PlaywrightTestConfig = {
 			use: { javaScriptEnabled: false }
 		},
 		{
-			name: 'pwa'
-			// use: {
-			// 	offline: true
-			// }
+			name: 'pwa',
+			use: {
+				offline: true
+			}
 		}
 	]
 };

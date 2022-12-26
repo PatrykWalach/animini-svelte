@@ -6,6 +6,20 @@ const config = {
 	plugins: [
 		sveltekit(),
 		SvelteKitPWA({
+			devOptions: {
+				enabled: true,
+				type: 'module',
+				navigateFallback: '/'
+			},
+			scope: '/',
+			base: '/',
+			srcDir: './src',
+			mode: 'development',
+			// strategies: 'injectManifest',
+
+			// injectManifest: {
+			// 	globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,woff,woff2}']
+			// },
 			manifest: {
 				short_name: 'SvelteKit PWA',
 				name: 'SvelteKit PWA',

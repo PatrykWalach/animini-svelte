@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-**/build
+*build*
+*dist*
 /.svelte-kit
 /package
 .env
@@ -13,6 +14,7 @@ node_modules
 *.png
 .prettierignore
 .eslintignore
+.gitignore
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
