@@ -1,36 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import TextFieldOutlined from './TextFieldOutlined.svelte';
+import TextFieldFilled from './TextFieldFilled.svelte';
 
-const meta: Meta<TextFieldOutlined> = {
-	title: 'Stories/TextField/Outlined',
-	component: TextFieldOutlined,
-	tags: ['autodocs'],
-	argTypes: {
-		children: { type: 'string' },
-		disabled: { type: 'boolean' },
-		error: { type: 'boolean' },
-		leading: {
-			options: ['IconMagnifyingGlass', 'IconExclamationCircle', 'IconXCircle', null],
-			control: {
-				type: 'select'
-			}
-		},
-		trailing: {
-			options: ['IconMagnifyingGlass', 'IconExclamationCircle', 'IconXCircle', null],
-			control: {
-				type: 'select'
-			}
-		},
-		name: { type: 'string' },
-		required: { type: 'boolean' },
-		supporting: { type: 'string' },
-		value: { type: 'string' }
-	}
+const meta: Meta<TextFieldFilled> = {
+	title: 'Stories/TextField/Filled',
+	component: TextFieldFilled,
+	tags: ['autodocs']
 };
 
 export default meta;
-type Story = StoryObj<TextFieldOutlined>;
+type Story = StoryObj<TextFieldFilled>;
 
 export const Enabled: Story = {
 	args: {
