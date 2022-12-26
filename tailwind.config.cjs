@@ -37,6 +37,55 @@ module.exports = {
 		space: false
 	},
 	plugins: [
+		plugin(({ addVariant, matchVariant }) => {
+			addVariant('error', [':merge(.group)[data-error=true] &', '&:invalid']);
+			addVariant('peer-error', [':merge(.group)[data-error=true] &', ':merge(.peer):invalid ~ &']);
+
+			matchVariant('not', (value) => `&:not(${value})`, {
+				values: {
+					disabled: ':disabled'
+				}
+			});
+			matchVariant('peer-not', (value) => `:merge(.peer):not(${value}) ~ &`, {
+				values: {
+					disabled: ':disabled',
+					'focus-within': ':focus-within'
+				}
+			});
+			matchVariant('group-not', (value) => `:merge(.group):not(${value}) &`, {
+				values: {
+					disabled: ':disabled',
+					'focus-within': ':focus-within'
+				}
+			});
+		}),
+		plugin(({ matchVariant }) => {
+			const { normalize } = require('tailwindcss/lib/util/dataTypes');
+
+			const fn = (_, { modifier }) =>
+				modifier
+					? [`:merge(.peer\\/${modifier})`, ' ~ .peer-group &']
+					: [':merge(.peer)', ' ~ .peer-group &'];
+
+			matchVariant(
+				'peer-group',
+				(value = '', extra) => {
+					let result = normalize(typeof value === 'function' ? value(extra) : value);
+					if (!result.includes('&')) result = '&' + result;
+
+					let [a, b] = fn('', extra);
+					return result.replace(/&(\S+)?/g, (_, pseudo = '') => a + pseudo + b);
+				},
+
+				{
+					values: {
+						hover: '&:hover',
+						focus: '&:focus',
+						'placeholder-shown': '&:placeholder-shown'
+					}
+				}
+			);
+		}),
 		// require('@tailwindcss/container-queries'),
 		plugin(({ matchUtilities, theme, addVariant, addBase, addUtilities }) => {
 			addBase({
