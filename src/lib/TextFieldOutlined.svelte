@@ -14,9 +14,9 @@
 	class="border-1 peer-group pointer-events-none absolute -top-[10px] left-0 right-0 bottom-[17.5px] rounded-xs border border-outline transition-all px-3 group-focus-within:border-2 group-focus-within:border-primary group-hover:border-on-surface group-hover:group-focus-within:border-primary peer-invalid:border-error group-focus-within:peer-invalid:border-error group-hover:peer-invalid:border-on-error-container group-focus-within:group-hover:peer-invalid:border-error peer-disabled:border-outline/[.12] group-hover:peer-disabled:border-outline/[.12] group-data-[error=true]:border-error group-focus-within:group-data-[error=true]:border-error group-hover:group-data-[error=true]:border-on-error-container group-focus-within:group-hover:group-data-[error=true]:border-error"
 >
 	<legend
-		class="overflow-hidden whitespace-nowrap opacity-0 transition-all peer-group-placeholder-shown:max-w-0 group-focus-within:peer-group-placeholder-shown:max-w-none"
+		class="overflow-hidden whitespace-nowrap opacity-0 transition-all -ml-[0.125rem] peer-group-placeholder-shown:max-w-0 group-focus-within:peer-group-placeholder-shown:max-w-none"
 	>
-		<span class="text-label-sm px-1">
+		<span class="text-body-sm px-1">
 			<slot>
 				<!-- <span class=" after:content-['*']"> Token </span> -->
 			</slot>
