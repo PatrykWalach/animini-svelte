@@ -1,12 +1,13 @@
 .DS_Store
 node_modules
-/build
+**/build
 /.svelte-kit
 /package
 .env
 .env.*
 !.env.example
-
+/src/lib/gql
+*.css
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json

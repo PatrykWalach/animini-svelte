@@ -1,6 +1,6 @@
-import { invalid } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
+import type { Actions, PageServerLoad } from './$types';
 import { Game } from './game';
-import type { PageServerLoad, Actions } from './$types';
 
 export const load: PageServerLoad = ({ cookies }) => {
 	const game = new Game(cookies.get('sverdle'));
@@ -38,7 +38,7 @@ export const actions: Actions = {
 		const i = game.answers.length;
 
 		if (key === 'backspace') {
-			game.guesses[i] = game.guesses[i]?.slice(0, -1);
+			game.guesses[i] = String(game.guesses[i]?.slice(0, -1));
 		} else {
 			game.guesses[i] += key;
 		}
@@ -57,7 +57,7 @@ export const actions: Actions = {
 		const guess = data.getAll('guess') as string[];
 
 		if (!game.enter(guess)) {
-			return invalid(400, { badGuess: true });
+			return fail(400, { badGuess: true });
 		}
 
 		cookies.set('sverdle', game.toString());

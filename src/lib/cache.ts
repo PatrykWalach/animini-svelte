@@ -1,4 +1,4 @@
-import { InMemoryCache, type Cache, type TypedDocumentNode } from '@apollo/client/core';
+import { InMemoryCache, type Cache, type TypedDocumentNode } from '@apollo/client/core/index';
 import { derived, type Readable } from 'svelte/store';
 
 type GetQueryArgs<Data, Variables> = {

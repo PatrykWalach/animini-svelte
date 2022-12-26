@@ -1,13 +1,29 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
+<script lang="ts">
+	import { getCache } from '$lib/cache';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import welcome from '$lib/images/svelte-welcome.webp';
+	import type { PageData } from './$types';
+	import Counter from './Counter.svelte';
+	import { LayoutQuery } from './gql';
+
+	export let data: PageData;
+
+	const cache = getCache();
+
+	$: query = cache.getQuery({
+		query: LayoutQuery,
+		data,
+		variables: {}
+	});
 </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
+
+{$query.data?.Media?.id}
+{$query.data?.Media?.title?.userPreferred}
 
 <section>
 	<h1>
