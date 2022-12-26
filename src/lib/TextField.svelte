@@ -31,7 +31,7 @@
 	<slot />
 
 	<p
-		class="col-span-full gap-4 text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 peer-invalid:text-error peer-disabled:text-on-surface/[.38] group-data-[error=true]:text-error"
+		class="col-span-full gap-4 text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 peer-disabled:text-on-surface/[.38] peer-error:text-error"
 	>
 		<slot name="message">
 			<!-- {#if message}

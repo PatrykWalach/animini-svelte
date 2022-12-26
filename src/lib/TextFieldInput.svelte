@@ -14,5 +14,5 @@
 	{required}
 	spellCheck="false"
 	placeholder=" "
-	class="peer resize-none appearance-none items-center bg-transparent text-body-lg text-on-surface placeholder-transparent caret-primary outline-none min-w-0 w-full p-4 placeholder:transition-all invalid:caret-error focus:placeholder-on-surface-variant focus:ring-0 disabled:text-on-surface/[.38] group-data-[error=true]:caret-error"
+	class="peer resize-none appearance-none items-center bg-transparent text-body-lg text-on-surface placeholder-transparent caret-primary outline-none min-w-0 w-full p-4 placeholder:transition-all focus:placeholder-on-surface-variant focus:ring-0 disabled:text-on-surface/[.38] error:caret-error"
 />
