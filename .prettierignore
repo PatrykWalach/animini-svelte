@@ -9,6 +9,7 @@ node_modules
 /src/lib/gql
 *.ico
 *.png
+*.svg
 .prettierignore
 .eslintignore
 # Ignore files for PNPM, NPM and YARN
