@@ -25,13 +25,13 @@
 </script>
 
 <div
-	class="group relative grid grid-rows-[1fr_auto] grid-cols-[auto_1fr_auto] items-center"
+	class="group relative grid grid-cols-[auto_1fr_auto] grid-rows-[1fr_auto] items-center"
 	data-error={!!error}
 >
 	<slot />
 
 	<p
-		class="gap-4 col-span-full text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 group-data-[error=true]:text-error peer-invalid:text-error peer-disabled:text-on-surface/[.38]"
+		class="col-span-full gap-4 text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 peer-invalid:text-error peer-disabled:text-on-surface/[.38] group-data-[error=true]:text-error"
 	>
 		<slot name="message">
 			<!-- {#if message}
