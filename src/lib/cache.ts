@@ -1,17 +1,21 @@
 import { InMemoryCache, type Cache, type TypedDocumentNode } from '@apollo/client/core/index';
 import { derived, type Readable } from 'svelte/store';
 
-type GetQueryArgs<Data, Variables> = {
+interface GetQueryArgs<Data, Variables> {
 	data: Data;
 	variables: Variables;
 	query: TypedDocumentNode<Data, Variables>;
-};
+}
 
 export class InMemoryStore {
 	constructor(private cache: InMemoryCache) {}
 
 	public getQuery<Data, Variables>(this: InMemoryStore, args: GetQueryArgs<Data, Variables>) {
 		this.cache.writeQuery(args);
+
+		if (typeof document !== 'undefined') {
+			localStorage.setItem('apollo-cache', JSON.stringify(this.cache.extract()));
+		}
 
 		const data = this.getStore({
 			query: args.query,
@@ -70,8 +74,6 @@ export function createCache() {
 		} catch (e) {
 			//
 		}
-
-		localStorage.setItem('apollo-cache', JSON.stringify(cache.extract()));
 	}
 
 	setContext(KEY, new InMemoryStore(cache));
