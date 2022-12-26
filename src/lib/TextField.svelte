@@ -18,17 +18,20 @@
 <script lang="ts">
 	import { getContext, setContext } from 'svelte';
 
-	export let disabled = false;
 	export let error = false;
 	export let name: string;
 
 	setTextFieldContext({ name, id: name });
 </script>
 
-<div class="group relative grid" data-error={!!error} data-disabled={!!disabled}>
+<div
+	class="group relative grid grid-rows-[1fr_auto] grid-cols-[auto_1fr_auto] items-center"
+	data-error={!!error}
+>
 	<slot />
+
 	<p
-		class="gap-4 text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 group-data-[error=true]:text-error peer-invalid:text-error peer-disabled:text-on-surface/[.38] group-data-[error=true]:peer-disabled:text-on-surface/[.38] peer-invalid:peer-disabled:text-on-surface/[.38]"
+		class="gap-4 col-span-full text-body-sm text-on-surface-variant transition-all line-clamp-1 h-[17.5px] px-4 pt-1 group-data-[error=true]:text-error peer-invalid:text-error peer-disabled:text-on-surface/[.38]"
 	>
 		<slot name="message">
 			<!-- {#if message}
