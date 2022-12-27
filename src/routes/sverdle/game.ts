@@ -1,4 +1,4 @@
-import { words, allowed } from './words.server';
+import { allowed, words } from './words.server';
 
 export class Game {
 	index: number;
@@ -13,16 +13,16 @@ export class Game {
 		if (serialized) {
 			const [index, guesses, answers] = serialized.split('-');
 
-			this.index = +index;
+			this.index = +Number(index);
 			this.guesses = guesses ? guesses.split(' ') : [];
 			this.answers = answers ? answers.split(' ') : [];
 		} else {
 			this.index = Math.floor(Math.random() * words.length);
 			this.guesses = ['', '', '', '', '', ''];
-			this.answers = [] ;
+			this.answers = [];
 		}
 
-		this.answer = words[this.index];
+		this.answer = String(words[this.index]);
 	}
 
 	/**
@@ -53,7 +53,7 @@ export class Game {
 		// match can prevent a later exact match)
 		for (let i = 0; i < 5; i += 1) {
 			if (answer[i] === '_') {
-				const index = available.indexOf(letters[i]);
+				const index = available.indexOf(String(letters[i]));
 				if (index !== -1) {
 					answer[i] = 'c';
 					available[index] = ' ';

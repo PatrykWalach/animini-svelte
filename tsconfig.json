@@ -8,7 +8,16 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"noImplicitOverride": true,
+		"noUncheckedIndexedAccess": true,
+		"strict": true,
+		"types": ["vite-plugin-pwa/client", "vite-plugin-pwa/info"]
+	},
+	"ts-node": {
+		"transpileOnly": true,
+		"compilerOptions": {
+			"preserveValueImports": false
+		}
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
